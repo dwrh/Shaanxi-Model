@@ -1,0 +1,382 @@
+B 2 C o m p i l a t i o n
+B 7643 Include File Summary
+B 7687 E x e c u t i o n
+I 7691 nkeg
+I 7702 sam
+I 8291 sam
+I 8880 dif0
+I 8903 sam
+I 9492 dif0
+I 9515 emission0
+I 9567 Temission0
+I 9620 Temission1
+I 9630 Temission2
+I 9636 EF_GHG
+I 9646 year
+I 9660 xaf0
+I 9702 ld0
+I 9758 wage0
+I 9815 rd0
+I 9819 eft0
+I 9824 efi0
+I 9859 efkh0
+I 9868 efh0
+I 9875 mue0
+I 9881 lambdae0
+I 9916 xp0
+I 9937 lambdac0
+I 9944 yh0
+I 9949 kappah0
+I 9957 yd0
+I 9962 ly0
+I 9967 xlh
+I 9976 tfl0
+I 9980 ctrh0
+I 9985 xcht
+I 9990 xch
+I 9997 ctrw0
+I 10004 xcwt
+I 10012 gtrg0
+I 10017 tp0
+I 10021 tcp0
+I 11848 tcc0
+I 11853 tcf0
+I 11858 tary0
+I 11863 te0
+I 11867 tmg0
+I 11924 tft0
+I 11929 tfk0
+I 11934 tfl0
+I 11939 tfr0
+I 11944 tef0
+I 11948 kappac0
+I 11955 kappah0
+I 11964 wtrg0
+I 11969 gy0
+I 11974 gexp0
+I 11980 te0
+I 11984 yf0
+I 11989 savg0
+I 11994 savh0
+I 11999 savc0
+I 12004 tks0
+I 12009 omegak
+I 12015 aks
+I 12020 omegakt
+I 12023 akst
+I 12028 tk0
+I 12029 KSup0
+I 12032 tks0
+I 12037 kd0
+I 12093 ptks0
+I 12099 PK0
+I 12101 rent0
+I 12158 aks
+I 12163 akst
+I 12168 walras0
+I 12170 savf0
+I 12175 er0
+I 12180 eta
+I 12221 theta
+I 12262 mu0
+I 12303 sam
+I 12892 samCSV
+I 13479 xaf0
+I 13521 ld0
+I 13577 wage0
+I 13633 rd0
+I 13652 eft0
+I 13657 efi0
+I 13692 efkh0
+I 13701 efh0
+I 13708 mue0
+I 13714 lambdae0
+I 13749 xp0
+I 13770 lambdac0
+I 13777 yh0
+I 13782 kappah0
+I 13790 yd0
+I 13795 ly0
+I 13800 xlh
+I 13809 tfl0
+I 13813 ctrh0
+I 13818 xcht
+I 13823 xch
+I 13830 ctrw0
+I 13837 xcwt
+I 13845 gtrg0
+I 13850 tp0
+I 13854 tcp0
+I 15681 tcc0
+I 15686 tcf0
+I 15691 tary0
+I 15696 te0
+I 15700 tmg0
+I 15757 tft0
+I 15762 tfk0
+I 15767 tfl0
+I 15772 tfr0
+I 15777 tef0
+I 15781 kappac0
+I 15788 kappah0
+I 15797 wtrg0
+I 15802 gy0
+I 15807 gexp0
+I 15813 te0
+I 15817 yf0
+I 15822 savg0
+I 15827 savh0
+I 15832 savc0
+I 15837 tks0
+I 15842 omegak
+I 15848 aks
+I 15853 omegakt
+I 15856 akst
+I 15861 tk0
+I 15862 KSup0
+I 15865 tks0
+I 15870 kd0
+I 15926 ptks0
+I 15932 PK0
+I 15934 rent0
+I 15991 aks
+I 15996 akst
+I 16001 walras0
+I 16003 savf0
+I 16008 er0
+B 16015 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 16037 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 16137 E x e c u t i o n
+I 16140 walras
+I 16142 savf
+I 16148 gl
+B 16152 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 16174 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 16319 E x e c u t i o n
+I 16322 walras
+I 16324 savf
+I 16330 gl
+B 16334 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 16356 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 16501 E x e c u t i o n
+I 16504 walras
+I 16506 savf
+I 16512 gl
+I 16514 sam
+I 17103 samCSV
+B 17682 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 17704 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 17849 E x e c u t i o n
+I 17852 walras
+I 17854 savf
+I 17860 gl
+B 17864 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 17886 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 18031 E x e c u t i o n
+I 18034 walras
+I 18036 savf
+I 18042 gl
+B 18046 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 18068 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 18213 E x e c u t i o n
+I 18216 walras
+I 18218 savf
+I 18224 gl
+B 18228 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 18250 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 18395 E x e c u t i o n
+I 18398 walras
+I 18400 savf
+I 18406 gl
+B 18410 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 18432 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 18577 E x e c u t i o n
+I 18580 walras
+I 18582 savf
+I 18588 gl
+B 18592 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 18614 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 18759 E x e c u t i o n
+I 18762 walras
+I 18764 savf
+I 18770 gl
+B 18774 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 18796 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 18941 E x e c u t i o n
+I 18944 walras
+I 18946 savf
+I 18952 gl
+B 18956 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 18978 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 19123 E x e c u t i o n
+I 19126 walras
+I 19128 savf
+I 19134 gl
+B 19138 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 19160 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 19305 E x e c u t i o n
+I 19308 walras
+I 19310 savf
+I 19316 gl
+B 19320 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 19342 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 19487 E x e c u t i o n
+I 19490 walras
+I 19492 savf
+I 19498 gl
+B 19502 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 19524 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 19669 E x e c u t i o n
+I 19672 walras
+I 19674 savf
+I 19680 gl
+B 19684 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 19706 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 19851 E x e c u t i o n
+I 19854 walras
+I 19856 savf
+I 19862 gl
+B 19866 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 19888 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 20033 E x e c u t i o n
+I 20036 walras
+I 20038 savf
+I 20044 gl
+B 20048 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 20070 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 20215 E x e c u t i o n
+I 20218 walras
+I 20220 savf
+I 20226 gl
+B 20230 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 20252 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 20397 E x e c u t i o n
+I 20400 walras
+I 20402 savf
+I 20408 gl
+B 20412 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 20434 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 20579 E x e c u t i o n
+I 20582 walras
+I 20584 savf
+I 20590 gl
+B 20594 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 20616 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 20761 E x e c u t i o n
+I 20764 walras
+I 20766 savf
+I 20772 gl
+B 20776 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 20798 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 20943 E x e c u t i o n
+I 20946 walras
+I 20948 savf
+I 20954 gl
+B 20958 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 20980 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 21125 E x e c u t i o n
+I 21128 walras
+I 21130 savf
+I 21136 gl
+B 21140 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 21162 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 21307 E x e c u t i o n
+I 21310 walras
+I 21312 savf
+I 21318 gl
+B 21322 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 21344 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 21489 E x e c u t i o n
+I 21492 walras
+I 21494 savf
+I 21500 gl
+B 21504 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 21526 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 21671 E x e c u t i o n
+I 21674 walras
+I 21676 savf
+I 21682 gl
+B 21686 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 21708 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 21853 E x e c u t i o n
+I 21856 walras
+I 21858 savf
+I 21864 gl
+B 21868 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 21890 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 22035 E x e c u t i o n
+I 22038 walras
+I 22040 savf
+I 22046 gl
+B 22050 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 22072 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 22217 E x e c u t i o n
+I 22220 walras
+I 22222 savf
+I 22228 gl
+B 22232 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 22254 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 22399 E x e c u t i o n
+I 22402 walras
+I 22404 savf
+I 22410 gl
+B 22414 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 22436 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 22581 E x e c u t i o n
+I 22584 walras
+I 22586 savf
+I 22592 gl
+B 22596 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 22618 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 22763 E x e c u t i o n
+I 22766 walras
+I 22768 savf
+I 22774 gl
+B 22778 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 22800 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 22945 E x e c u t i o n
+I 22948 walras
+I 22950 savf
+I 22956 gl
+B 22960 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 22982 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 23127 E x e c u t i o n
+I 23130 walras
+I 23132 savf
+I 23138 gl
+B 23142 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 23164 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 23309 E x e c u t i o n
+I 23312 walras
+I 23314 savf
+I 23320 gl
+B 23324 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 23346 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 23491 E x e c u t i o n
+I 23494 walras
+I 23496 savf
+I 23502 gl
+B 23506 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 23528 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 23673 E x e c u t i o n
+I 23676 walras
+I 23678 savf
+I 23684 gl
+B 23688 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 23710 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 23855 E x e c u t i o n
+I 23858 walras
+I 23860 savf
+I 23866 gl
+B 23870 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 23892 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 24037 E x e c u t i o n
+I 24040 walras
+I 24042 savf
+I 24048 gl
+B 24052 Model Statistics    SOLVE PANDA Using MCP From line 6648
+B 24074 Solution Report     SOLVE PANDA Using MCP From line 6648
+B 24219 E x e c u t i o n
+I 24222 walras
+I 24224 savf
+I 24230 gl

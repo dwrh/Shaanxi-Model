@@ -1,0 +1,43 @@
+# Git Commands and Workflow
+
+## Commands and uses
+
+git clone [url] # use this the first time you want to add a repository to your computer. copy the clone url from github.com
+git checkout [repository] [branchname] # this moves you between branches of a directory and forks. If you want to move to a new repository, input the name, otherwise leave blank.
+git branch [branchname] # creates a new branch (must have a name)
+git status # this displays the changes occuring
+git add . # this "stages" files and modifications for committing. The '.' means all changes. You could instead put the filename if there are other files you don't want to commit yet.
+git commit -m "[message]" # this makes the edits on your local git directory and sets them up to travel to the cloud hub. Add a message to show others what you did.
+git push # this syncs modified or added files with the cloud hub
+git pull # this syncs your local directory with the cloud hub (same as git fetch and git merge)
+git fetch # this "grabs" another branch or repository
+git merge # this incorporates changes from another repository
+
+## Suggested workflow
+
+Begin by making sure your directory is up-to-date with the master directory. BE CAREFUL to not do this if you have made changes in your own directory that have not already been merged into master!
+
+git checkout master
+git pull # a fast forward merge
+
+Then make your own branch, and do your work there. 
+
+git branch [branchname]
+git checkout [branchname]
+
+When you are done, submit your changes.
+
+git add . # or filename
+git commit -m "[message]"
+git push
+
+If you are ready to have these changes reviewed and merged into the master directory, go to to the Panda repository on github.com and click "Pull requests".
+Open a new pull request comparing master to your branch. You can assign others to review it, make comments, etc. 
+Then the person managing the master directory will decide whether or not to merge these edits. The pull request will disappear on Github once it has been managed.
+
+## About forking
+
+In many cases, such as working on open source projects, you will not have access to the master git repo. So you must create fork the repo, which essentially makes a copy. 
+You need to clone the fork to your computer. Then you make changes to the file in question. At this point you push your fork. The owner of the master repo will then see the changes and can accept and merge or respond with questions (on github). 
+Once they are merged, you can delete the fork, pull the master and be up-to-date.
+

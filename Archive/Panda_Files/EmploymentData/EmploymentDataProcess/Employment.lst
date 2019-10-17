@@ -1,0 +1,191 @@
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                01/18/17 09:16:54 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  *========================= Read data from excel ==============================
+****  CALL=127 "gdxxrw data_input.xlsx par=data rng=A1"
+****  MSG=Unknown error: 127
+****  ERRORLEVEL set to 1
+   2  $call gdxxrw data_input.xlsx par=data rng=A1
+****                                             $330
+   3  *=============================================================================
+   4   
+   5  *======================= Defining a name for the data ========================
+   6  *Defining a name for the data
+   7  parameter
+   8  data(*,*)      input data
+   9  *=============================================================================
+  10   
+  11  *========================= CALLING AND LOADING GDX FILE ======================
+  12  *Specify the GDX file to be used for reading
+**** File: /Users/sam/Dropbox/Research/MyStudies/ChinaCGE/EmploymentData/EmploymentDataProcess/data_input.gdx
+**** Msg : No such file or directory
+  13  $gdxin data_input.gdx
+****                      $510
+  14   
+  15  *Read GAMS symbol from the GDX file. Note that the word "iodata" has been
+  16  *declared above before the the $load command
+  17  $load data
+****      $502
+  18   
+  19  display data;
+****             $141
+  20   
+  21  Set
+  22           l  labor type       /L1*L28/
+  23   
+  24           i  all input sectors /1*139/
+  25   
+  26           region /urban,rural/
+  27   
+  28           alias (l,ll),(i,j);
+  29   
+  30  set maplr(l,region) map from labor to region
+  31  /L1        .        Urban
+  32  L2        .        Urban
+  33  L3        .        Urban
+  34  L4        .        Urban
+  35  L5        .        Urban
+  36  L6        .        Urban
+  37  L7        .        Urban
+  38  L8        .        Rural
+  39  L9        .        Rural
+  40  L10        .        Rural
+  41  L11        .        Rural
+  42  L12        .        Rural
+  43  L13        .        Rural
+  44  L14        .        Rural
+  45  L15        .        Urban
+  46  L16        .        Urban
+  47  L17        .        Urban
+  48  L18        .        Urban
+  49  L19        .        Urban
+  50  L20        .        Urban
+  51  L21        .        Urban
+  52  L22        .        Rural
+  53  L23        .        Rural
+  54  L24        .        Rural
+  55  L25        .        Rural
+  56  L26        .        Rural
+  57  L27        .        Rural
+  58  L28        .        Rural
+  59  /;
+  60   
+  61   
+  62  Parameter        LAW0(l)     average wage from micro data in Yuan;
+  63  LAW0(l)=data("wage",l);
+****                    $116
+  64   
+  65  Parameter        LQ0(i,l)     intinal employment quantity from population census in 10 Thousand person;
+  66  LQ0(i,l) = data(i,l)/10000;
+  67   
+  68  Parameter        LAV0(i)      labor compensation by sectors in IO 10 Thousand Yuan ;
+  69  LAV0(i)=data(i,"U");
+****                   $116
+  70   
+  71  *==============Step1: adjustment from 2010 to 2012==============================
+  72   
+  73  table  em(*,*)  employment data from China annual stats in 10 thousand person
+  74                total        urban      rural
+  75  a_2010        76105        34687      41418
+  76  b_2012        76704        37102      39602
+  77   
+  78  ;
+  79  parameter  af(*)  adjustment factors for employment from 2010 to 2012          ;
+  80  af('urban')=em('b_2012','urban')/em('a_2010','urban');
+  81  af('rural')=em('b_2012','rural')/em('a_2010','rural');
+  82   
+  83   
+  84  LQ0(i,l)$maplr(l,'urban') = LQ0(i,l)*af('urban');
+  85  LQ0(i,l)$maplr(l,'rural') = LQ0(i,l)*af('rural');
+  86   
+  87   
+  88  *==============Step2: Split the labor input in IO table to 28 detailed labor types======
+  89   
+  90  *definition of matrix A
+  91   
+  92  Parameter        a(i,l)    original matrix for labor compensation from avaliable data in 10 Thousand Yuan;
+  93  a(i,l) = LAW0(l)/(sum((j,ll),LAW0(ll)*LQ0(j,ll))/sum((j,ll),LQ0(j,ll)))*LAV0(i)/sum(ll,LQ0(i,ll))*LQ0(i,l);
+  94   
+  95   
+  96  Parameter        LSW0(i)    average wage by sector in Yuan    ;
+  97  LSW0(i)=LAV0(i)*10000/sum(l,LQ0(i,l));
+  98   
+  99   
+ 100  *estimation of matrix X
+ 101   
+ 102  Variable
+ 103  obj
+ 104   
+ 105  x(i,l)   split compensation for labor l in sector i  in  10 Thousand Yuan
+ 106  LW(i,l)  wage level for labor l in sector i  in Yuan per person
+ 107  ;
+ 108   
+ 109  *==      Stage 2a: Targeting levelized cost relationships
+ 110   
+ 111  Equation
+ 112  objeq
+ 113  eqx(i,l)
+ 114  eq1(i)
+ 115  ;
+ 116   
+ 117  objeq..           obj =e=   sum((i,l)$a(i,l),x(i,l)*(log(x(i,l)/a(i,l))));
+ 118   
+ 119  eqx(i,l)..        x(i,l) =e= LW(i,l)*LQ0(i,l);
+ 120   
+ 121  * Market clearing constraint (row sum)
+ 122  eq1(i)..          sum(l,x(i,l))=e= LAV0(i);
+ 123   
+ 124  x.l(i,l) =  a(i,l);
+ 125  x.lo(i,l) = 0.000000000000001*a(i,l);
+ 126  x.fx(i,l)$(a(i,l) eq 0) =  0;
+ 127   
+ 128  model ECOMOD1 / all /
+ 129  solve ECOMOD1 using NLP minimizing obj;
+****                                        $257
+ 130   
+ 131  display x.l;
+ 132   
+ 133   
+ 134  *================= Unloading to Excel through GDX ============================
+ 135  execute_unload 'data_output.gdx', x.l LW.l LQ0
+ 136  execute 'gdxxrw.exe data_output.gdx o=Output.xlsx var=x.l rng=compensation! '
+ 137  execute 'gdxxrw.exe data_output.gdx o=Output.xlsx var=LW.l rng=Wage! '
+ 138  execute 'gdxxrw.exe data_output.gdx o=Output.xlsx par=LQ0 rng=employment! '
+ 139  *=============================================================================
+ 140  *=========================End of the GAMS Code ===============================
+ 141   
+ 142  * cd /users/Sam/Dropbox/Research/MyStudies/ChinaCGE/EmploymentData/EmploymentDataProcess/Employment.gms
+ 143  * /users/sam/GAMSMacOS/gams Employment pw=150 ps=9999
+GAMS Rev 237  XXX-DEG 23.7.2 Mac x86_64/Darwin                                                                                01/18/17 09:16:54 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+116  Label is unknown
+141  Symbol neither initialized nor assigned
+        A wild shot: You may have spurious commas in the explanatory
+        text of a declaration. Check symbol reference list.
+257  Solve statement not checked because of previous errors
+330  CALL failed
+502  GDXIN  file not open - ignore rest of line
+510  Unable to open gdx file for $GDXIN
+
+**** 7 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.010 SECONDS      3 Mb  DEX237-237 Jul 21, 2011
+
+
+USER: David Roland-Holst                             G110727:0605AN-DAR
+      University of California, Agricultural and Resource EconomiDC7723
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /Users/sam/Dropbox/Research/MyStudies/ChinaCGE/EmploymentData/EmploymentDataProcess/Employment.gms
+Output     /Users/sam/Dropbox/Research/MyStudies/ChinaCGE/EmploymentData/EmploymentDataProcess/Employment.lst
+
+**** USER ERROR(S) ENCOUNTERED

@@ -1,0 +1,35 @@
+[PROJECT]
+
+[RP:LABOR MARKET]
+1=
+
+[RP:ELEC_SPLIT]
+1=
+
+[SOLVERS]
+NLP=PATHNLP
+
+[RP:WAGE_BALANCE]
+1=
+
+[RP:1_SECTORS AGGREGATION_IO_139 SECTORS VS CENSUS_511SECTORS]
+1=
+
+[RP:EMPLOYMENT]
+1=
+
+[MRUFILES]
+1=C:\Users\hero\Desktop\Github\Data Process\IO in GAMS £¨Match & Mapping&Oilgas£©\1_Sectors Aggregation_IO_139 Sectors VS Census_511sectors.gms
+2=C:\Users\hero\Desktop\Github\Data Process\Education & Region\Wage_balance.lst
+3=C:\Users\hero\Desktop\Github\Data Process\Education & Region\Wage_balance.gms
+4=C:\Users\hero\Desktop\Github\Data Process\electricity\elec_split.gms
+
+[OPENWINDOW_1]
+FILE0=C:\Users\hero\Desktop\Github\Data Process\Education & Region\Employment for David\Employment.gms
+FILE1=C:\Users\hero\Desktop\Github\Data Process\Education & Region\Employment for David\Employment.lst
+FILE2=C:\Users\hero\Desktop\Github\Data Process\Education & Region\Employment for David\Employment.gms
+MAXIM=1
+TOP=50
+LEFT=50
+HEIGHT=400
+WIDTH=908

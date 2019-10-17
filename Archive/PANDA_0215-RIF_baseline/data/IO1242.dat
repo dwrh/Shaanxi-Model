@@ -1,0 +1,293 @@
+* --
+* -- PANDA - PRC Aggregate National Development Assessment Model
+* --
+* --           All rights reserved
+* --
+* --           David Roland-Holst, Samuel G. Evans
+* --           Cecilia Han Springer, and MU Yaqian
+* --
+* --           Berkeley Energy and Resources, BEAR LLC
+* --           1442A Walnut Street, Suite 108
+* --           Berkeley, CA 94705 USA
+* --
+* --           Email: dwrh@berkeley.edu
+* --           Tel: 510-220-4567
+* --           Fax: 510-524-4591
+* --
+* --           October, 2016
+
+* --
+
+set iot /
+AgFFF
+Coal
+OilGas
+MetMin
+NMetMin
+FoodPr
+Textile
+Apparel
+WoodPr
+PaperPr
+RefPet
+Chemical
+NMetPr
+Metals
+MetalPr
+GenEqp
+SpecEqp
+TransEqp
+ElecEqp
+ICTEqp
+PrecInst
+OthMfg
+Waste
+MachRep
+
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+WatDist
+Constr
+WhRetTr
+TranspSrv
+HotRest
+ICTServ
+Finance
+RealEst
+BusServe
+ResTech
+EnvServ
+ResServ
+Education
+Health
+RecEnt
+PubAdm
+LabMUUL
+LabMUES
+LabMUMS
+LabMUHS
+LabMUJC
+LabMURC
+LabMUPG
+LabMRUL
+LabMRES
+LabMRMS
+LabMRHS
+LabMRJC
+LabMRRC
+LabMRPG
+LabFUUL
+LabFUES
+LabFUMS
+LabFUHS
+LabFUJC
+LabFURC
+LabFUPG
+LabFRUL
+LabFRES
+LabFRMS
+LabFRHS
+LabFRJC
+LabFRRC
+LabFRPG
+ProdTax
+Depr
+Capital
+HHRural
+HHUrban
+Enterprise
+Govt
+Capacct
+Invent
+ROW
+Total
+/
+
+mapios(iot,s) /
+AgFFF   .       AgFFF
+Coal    .       Coal
+OilGas  .       OilGas
+MetMin  .       MetMin
+NMetMin .       NMetMin
+FoodPr  .       FoodPr
+Textile .       Textile
+Apparel .       Apparel
+WoodPr  .       WoodPr
+PaperPr .       PaperPr
+RefPet  .       RefPet
+Chemical        .       Chemical
+NMetPr  .       NMetPr
+Metals  .       Metals
+MetalPr .       MetalPr
+GenEqp  .       GenEqp
+SpecEqp .       SpecEqp
+TransEqp        .       TransEqp
+ElecEqp .       ElecEqp
+ICTEqp  .       ICTEqp
+PrecInst        .       PrecInst
+OthMfg  .       OthMfg
+Waste   .       Waste
+MachRep .       MachRep
+
+T_D	.	    T_D
+Coal_Power	.	   Coal_Power
+Oil_Power	.	    Oil_Power
+Gas_Power	.	    Gas_Power
+Nuclear	.	    Nuclear
+Hydro	.	    Hydro
+Wind	.	   Wind
+Solar	.	Solar
+Biomass	.	Biomass
+
+GasDist .       GasDist
+WatDist .       WatDist
+Constr  .       Constr
+WhRetTr .       WhRetTr
+TranspSrv       .       TranspSrv
+HotRest .       HotRest
+ICTServ .       ICTServ
+Finance .       Finance
+RealEst .       RealEst
+BusServe        .       BusServe
+ResTech .       ResTech
+EnvServ .       EnvServ
+ResServ .       ResServ
+Education       .       Education
+Health  .       Health
+RecEnt  .       RecEnt
+PubAdm  .       PubAdm
+LabMUUL	.	LabMUUL
+LabMUES	.	LabMUES
+LabMUMS	.	LabMUMS
+LabMUHS	.	LabMUHS
+LabMUJC	.	LabMUJC
+LabMURC	.	LabMURC
+LabMUPG	.	LabMUPG
+LabMRUL	.	LabMRUL
+LabMRES	.	LabMRES
+LabMRMS	.	LabMRMS
+LabMRHS	.	LabMRHS
+LabMRJC	.	LabMRJC
+LabMRRC	.	LabMRRC
+LabMRPG	.	LabMRPG
+LabFUUL	.	LabFUUL
+LabFUES	.	LabFUES
+LabFUMS	.	LabFUMS
+LabFUHS	.	LabFUHS
+LabFUJC	.	LabFUJC
+LabFURC	.	LabFURC
+LabFUPG	.	LabFUPG
+LabFRUL	.	LabFRUL
+LabFRES	.	LabFRES
+LabFRMS	.	LabFRMS
+LabFRHS	.	LabFRHS
+LabFRJC	.	LabFRJC
+LabFRRC	.	LabFRRC
+LabFRPG	.	LabFRPG
+prodtax         . prodtax
+Depr            . depr
+Capital . capital
+/
+
+ioinst(iot) /
+LabMUUL
+LabMUES
+LabMUMS
+LabMUHS
+LabMUJC
+LabMURC
+LabMUPG
+LabMRUL
+LabMRES
+LabMRMS
+LabMRHS
+LabMRJC
+LabMRRC
+LabMRPG
+LabFUUL
+LabFUES
+LabFUMS
+LabFUHS
+LabFUJC
+LabFURC
+LabFUPG
+LabFRUL
+LabFRES
+LabFRMS
+LabFRHS
+LabFRJC
+LabFRRC
+LabFRPG
+ProdTax
+Depr
+Capital
+HHRural
+HHUrban
+Enterprise
+Govt
+Capacct
+Invent
+ROW
+/
+
+mapinst (ioinst,inst) /
+LabMUUL	.	LabMUUL
+LabMUES	.	LabMUES
+LabMUMS	.	LabMUMS
+LabMUHS	.	LabMUHS
+LabMUJC	.	LabMUJC
+LabMURC	.	LabMURC
+LabMUPG	.	LabMUPG
+LabMRUL	.	LabMRUL
+LabMRES	.	LabMRES
+LabMRMS	.	LabMRMS
+LabMRHS	.	LabMRHS
+LabMRJC	.	LabMRJC
+LabMRRC	.	LabMRRC
+LabMRPG	.	LabMRPG
+LabFUUL	.	LabFUUL
+LabFUES	.	LabFUES
+LabFUMS	.	LabFUMS
+LabFUHS	.	LabFUHS
+LabFUJC	.	LabFUJC
+LabFURC	.	LabFURC
+LabFUPG	.	LabFUPG
+LabFRUL	.	LabFRUL
+LabFRES	.	LabFRES
+LabFRMS	.	LabFRMS
+LabFRHS	.	LabFRHS
+LabFRJC	.	LabFRJC
+LabFRRC	.	LabFRRC
+LabFRPG	.	LabFRPG
+ProdTax .       ProdTax
+Depr    .       Capital
+Capital .       Capital
+HHRural .       HHRural
+HHUrban .       HHUrban
+Enterprise      .       Enterprise
+Govt    .       Govt
+Capacct .       Capacct
+Invent  .       Invent
+ROW     .       ROW
+/
+;
+
+alias (iot,jot), (ioinst,joinst) ;
+
+table io12(iot,jot) 2012 China Input-Output Table
+;
+
+*== read the updated io data from gdx file
+parameter samPANDA China's IO data in 10 thousand Yuan;
+$gdxin data/SAM_PANDA%EMPath%.gdx
+$load samPANDA
+io12(iot,jot)=samPANDA(iot,jot);

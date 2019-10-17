@@ -1,0 +1,128 @@
+*## PANDA Emissions Factors
+*## updated by Yaqian with CO2 emission data on Feb 10
+set
+
+ef  effluent categories /
+co2
+n2o
+ch4
+voc
+co
+nox
+sox
+pm
+pm10
+pm25
+/
+
+ghg(ef) greenhouse gases /
+co2
+n2o
+ch4
+/
+
+crit(ef) criteria pollutants /
+voc
+co
+nox
+sox
+pm
+pm10
+pm25
+/
+;
+
+Set    fuel fossul fuel source /coal, oil, gas/;
+set     ces(erg) co2 emission source sectors /Coal,RefPet,GasDist,
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass/
+set mapif(fuel,ces) maping from sectors to fuel
+/
+         Coal    .    Coal
+         Oil     .    RefPet
+         Gas      .    GasDist
+/
+
+parameter
+           emissionfactor(fuel)    emission factor by fuel (100 million tonnes CO2 equivalent per 10 thousand Yuan Input)
+           CO2at        42 sectors co2 emission by fuel (100 million tonnes CO2 equivalent )
+           Sat_feedstock share of energy input use as feedstock in specific sectors;
+
+$GDXIN Data/PRC42_emit.gdx
+$LOAD CO2at emissionfactor Sat_feedstock
+$GDXIN
+display CO2at, emissionfactor, Sat_feedstock ;
+
+*## Need to establish the China emissions inventory
+parameter EF_GHG(i,ghg) GHG Emissions factors by fuel (Billion tonnes CO2 equivalent per Billion Yuan fule Input) ;
+EF_GHG(i,ghg) = 0 ;
+EF_GHG(ces,"co2") = sum(fuel$mapif(fuel,ces), emissionfactor(fuel)/10*1e5);
+
+parameter EF_CP(i,crit) Criteria pollutant emissions factors (thousand tons per million $ output) ;
+EF_CP(i,crit) = 0 ;
+
+*==parameters for emission accounts from Yaqian's method
+parameter
+          r_feed(ces,*,*)     share of energy input use as feedstock in specific sectors
+          emission0(ces,*)  sectoral emission by source (Billion tonnes CO2 equivalent )
+          Temission0                     Total emission by sector (Billion tonnes CO2 equivalent )
+          Temission1                     Total emission by fuel (Billion tonnes CO2 equivalent )
+          Temission2                      total emission (Billion tonnes CO2 equivalent )
+          ;
+
+r_feed(ces,i,"co2") = Sat_feedstock(ces,i);
+
+emission0(ces,i)=EF_GHG(ces,"co2") *sam(ces,i)*(1-r_feed(ces,i,"co2") );
+emission0(ces,h)=EF_GHG(ces,"co2") *sam(ces,h)*(1-r_feed(ces,h,"co2"));
+
+Temission0(i,"co2") = sum(ces, emission0(ces,i));
+Temission0(h,"co2") = sum(ces, emission0(ces,h));
+
+Temission1(ces,"co2") = sum(i, emission0(ces,i)) + sum(h, emission0(ces,h));
+
+Temission2("co2") = sum((ces,i), emission0(ces,i)) + sum((ces,h), emission0(ces,h));
+
+parameter emit(i,ef), emit2(i,ef) ;
+emit2(i,ghg) = EF_GHG(i,ghg) ;
+emit2(i,crit) = EF_CP(i,crit) ;
+emit(i,"co2") = EF_GHG(i,"co2") ;
+
+
+*# carbon tax and cap
+parameter EffTax(i,ef) ;
+efftax(i,ef) = 0 ;
+
+Parameter Nonco2(i) ;
+
+nonco2(i) = 0 ;
+
+*## Sectors Covered by the Cap
+set
+icap(i) Sector Coverage of the Cap
+ncap(i) Sectors not covered
+hcap(h) Sector Coverage of the Cap
+;
+alias (icap,iicap) ;
+alias (hcap,hhcap) ;
+
+*## Sectoral Emission Groups for Policy Targeting
+set
+Group1(i)
+Group2(i)
+Group3(i)
+Group4(i)
+Group5(i)
+ ;
+
+*ip(i) = Group1(i) ;
+ip(i) = i(i) ;
+*np(i) = yes$(ag(i)) ;
+np(i) = not ip(i) ;
+*display$ivb ip, np ;

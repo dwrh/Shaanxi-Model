@@ -1,0 +1,888 @@
+B 2 C o m p i l a t i o n
+B 7562 Include File Summary
+B 7610 E x e c u t i o n
+I 7614 sam
+I 8204 sam
+I 8794 dif0
+I 8818 sam
+I 9408 dif0
+I 9432 year
+I 9446 xaf0
+I 9490 ld0
+I 9546 wage0
+I 9602 rd0
+I 9623 ly0
+I 9628 xlh
+I 9637 tfl0
+I 9641 ctrh0
+I 9646 xcht
+I 9651 xch
+I 9658 ctrw0
+I 9665 xcwt
+I 9673 gtrg0
+I 9677 tp0
+I 9734 tcp0
+I 9739 tcc0
+I 9744 tcf0
+I 9749 tary0
+I 9754 te0
+I 9759 tmg0
+I 9764 tft0
+I 9769 tfk0
+I 9774 tfl0
+I 9779 tfr0
+I 9784 tef0
+I 9788 kappac0
+I 9795 kappah0
+I 9804 wtrg0
+I 9809 gy0
+I 9814 gexp0
+I 9820 te0
+I 9824 yf0
+I 9829 savg0
+I 9834 savh0
+I 9839 savc0
+I 9844 tks0
+I 9849 omegak
+I 9855 aks
+I 9860 omegakt
+I 9863 akst
+I 9868 tk0
+I 9869 KSup0
+I 9872 tks0
+I 9877 kd0
+I 9933 ptks0
+I 9939 PK0
+I 9941 rent0
+I 9998 aks
+I 10003 akst
+I 10008 walras0
+I 10010 savf0
+I 10015 er0
+I 10020 eft0
+I 10025 efi0
+I 10060 efkh0
+I 10069 efh0
+I 10076 mue0
+I 10082 lambdae0
+I 10099 xp0
+I 10120 lambdac0
+I 10127 eta
+I 10168 theta
+I 10209 mu0
+I 10250 a00
+I 10697 sam
+I 11287 samCSV
+I 11875 AEEI
+I 12238 AEEI_t
+I 12287 chkj
+I 12292 elsh
+I 12383 ensh
+I 12459 xaf0
+I 12503 ld0
+I 12559 wage0
+I 12615 rd0
+I 12636 ly0
+I 12641 xlh
+I 12650 tfl0
+I 12654 ctrh0
+I 12659 xcht
+I 12664 xch
+I 12671 ctrw0
+I 12678 xcwt
+I 12686 gtrg0
+I 12690 tp0
+I 12747 tcp0
+I 12752 tcc0
+I 12757 tcf0
+I 12762 tary0
+I 12767 te0
+I 12772 tmg0
+I 12777 tft0
+I 12782 tfk0
+I 12787 tfl0
+I 12792 tfr0
+I 12797 tef0
+I 12801 kappac0
+I 12808 kappah0
+I 12817 wtrg0
+I 12822 gy0
+I 12827 gexp0
+I 12833 te0
+I 12837 yf0
+I 12842 savg0
+I 12847 savh0
+I 12852 savc0
+I 12857 tks0
+I 12862 omegak
+I 12868 aks
+I 12873 omegakt
+I 12876 akst
+I 12881 tk0
+I 12882 KSup0
+I 12885 tks0
+I 12890 kd0
+I 12946 ptks0
+I 12952 PK0
+I 12954 rent0
+I 13011 aks
+I 13016 akst
+I 13021 walras0
+I 13023 savf0
+I 13028 er0
+B 13035 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 13057 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 13112 E x e c u t i o n
+I 13115 walras
+I 13117 savf
+I 13123 gl
+I 13125 utef
+I 13130 ctax
+I 13135 emit
+B 13146 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 13168 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 13274 E x e c u t i o n
+I 13277 walras
+I 13279 savf
+I 13285 gl
+I 13287 utef
+I 13292 ctax
+I 13297 emit
+B 13308 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 13330 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 13487 E x e c u t i o n
+I 13490 walras
+I 13492 savf
+I 13498 gl
+I 13500 utef
+I 13505 ctax
+I 13510 emit
+I 13519 sam
+I 14109 samCSV
+B 14689 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 14711 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 14868 E x e c u t i o n
+I 14871 walras
+I 14873 savf
+I 14879 gl
+I 14881 utef
+I 14886 ctax
+I 14891 emit
+B 14902 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 14924 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 15081 E x e c u t i o n
+I 15084 walras
+I 15086 savf
+I 15092 gl
+I 15094 utef
+I 15099 ctax
+I 15104 emit
+B 15115 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 15137 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 15294 E x e c u t i o n
+I 15297 walras
+I 15299 savf
+I 15305 gl
+I 15307 utef
+I 15312 ctax
+I 15317 emit
+B 15328 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 15350 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 15507 E x e c u t i o n
+I 15510 walras
+I 15512 savf
+I 15518 gl
+I 15520 utef
+I 15525 ctax
+I 15530 emit
+B 15541 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 15563 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 15720 E x e c u t i o n
+I 15723 walras
+I 15725 savf
+I 15731 gl
+I 15733 utef
+I 15738 ctax
+I 15743 emit
+B 15754 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 15776 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 15933 E x e c u t i o n
+I 15936 walras
+I 15938 savf
+I 15944 gl
+I 15946 utef
+I 15951 ctax
+I 15956 emit
+B 15967 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 15989 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 16146 E x e c u t i o n
+I 16149 walras
+I 16151 savf
+I 16157 gl
+I 16159 utef
+I 16164 ctax
+I 16169 emit
+B 16180 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 16202 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 16359 E x e c u t i o n
+I 16362 walras
+I 16364 savf
+I 16370 gl
+I 16372 utef
+I 16377 ctax
+I 16382 emit
+B 16393 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 16415 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 16572 E x e c u t i o n
+I 16575 walras
+I 16577 savf
+I 16583 gl
+I 16585 utef
+I 16590 ctax
+I 16595 emit
+B 16606 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 16628 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 16785 E x e c u t i o n
+I 16788 walras
+I 16790 savf
+I 16796 gl
+I 16798 utef
+I 16803 ctax
+I 16808 emit
+B 16819 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 16841 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 16998 E x e c u t i o n
+I 17001 walras
+I 17003 savf
+I 17009 gl
+I 17011 utef
+I 17016 ctax
+I 17021 emit
+B 17032 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 17054 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 17211 E x e c u t i o n
+I 17214 walras
+I 17216 savf
+I 17222 gl
+I 17224 utef
+I 17229 ctax
+I 17234 emit
+B 17245 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 17267 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 17424 E x e c u t i o n
+I 17427 walras
+I 17429 savf
+I 17435 gl
+I 17437 utef
+I 17442 ctax
+I 17447 emit
+B 17458 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 17480 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 17637 E x e c u t i o n
+I 17640 walras
+I 17642 savf
+I 17648 gl
+I 17650 utef
+I 17655 ctax
+I 17660 emit
+B 17671 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 17693 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 17850 E x e c u t i o n
+I 17853 walras
+I 17855 savf
+I 17861 gl
+I 17863 utef
+I 17868 ctax
+I 17873 emit
+B 17884 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 17906 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 18063 E x e c u t i o n
+I 18066 walras
+I 18068 savf
+I 18074 gl
+I 18076 utef
+I 18081 ctax
+I 18086 emit
+B 18097 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 18119 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 18276 E x e c u t i o n
+I 18279 walras
+I 18281 savf
+I 18287 gl
+I 18289 utef
+I 18294 ctax
+I 18299 emit
+B 18310 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 18332 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 18489 E x e c u t i o n
+I 18492 walras
+I 18494 savf
+I 18500 gl
+I 18502 utef
+I 18507 ctax
+I 18512 emit
+B 18523 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 18545 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 18702 E x e c u t i o n
+I 18705 walras
+I 18707 savf
+I 18713 gl
+I 18715 utef
+I 18720 ctax
+I 18725 emit
+B 18736 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 18758 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 18915 E x e c u t i o n
+I 18918 walras
+I 18920 savf
+I 18926 gl
+I 18928 utef
+I 18933 ctax
+I 18938 emit
+B 18949 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 18971 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 19128 E x e c u t i o n
+I 19131 walras
+I 19133 savf
+I 19139 gl
+I 19141 utef
+I 19146 ctax
+I 19151 emit
+B 19162 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 19184 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 19341 E x e c u t i o n
+I 19344 walras
+I 19346 savf
+I 19352 gl
+I 19354 utef
+I 19359 ctax
+I 19364 emit
+B 19375 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 19397 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 19554 E x e c u t i o n
+I 19557 walras
+I 19559 savf
+I 19565 gl
+I 19567 utef
+I 19572 ctax
+I 19577 emit
+B 19588 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 19610 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 19767 E x e c u t i o n
+I 19770 walras
+I 19772 savf
+I 19778 gl
+I 19780 utef
+I 19785 ctax
+I 19790 emit
+B 19801 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 19823 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 19980 E x e c u t i o n
+I 19983 walras
+I 19985 savf
+I 19991 gl
+I 19993 utef
+I 19998 ctax
+I 20003 emit
+B 20014 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 20036 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 20193 E x e c u t i o n
+I 20196 walras
+I 20198 savf
+I 20204 gl
+I 20206 utef
+I 20211 ctax
+I 20216 emit
+B 20227 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 20249 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 20406 E x e c u t i o n
+I 20409 walras
+I 20411 savf
+I 20417 gl
+I 20419 utef
+I 20424 ctax
+I 20429 emit
+B 20440 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 20462 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 20619 E x e c u t i o n
+I 20622 walras
+I 20624 savf
+I 20630 gl
+I 20632 utef
+I 20637 ctax
+I 20642 emit
+B 20653 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 20675 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 20832 E x e c u t i o n
+I 20835 walras
+I 20837 savf
+I 20843 gl
+I 20845 utef
+I 20850 ctax
+I 20855 emit
+B 20866 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 20888 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 21045 E x e c u t i o n
+I 21048 walras
+I 21050 savf
+I 21056 gl
+I 21058 utef
+I 21063 ctax
+I 21068 emit
+B 21079 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 21101 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 21258 E x e c u t i o n
+I 21261 walras
+I 21263 savf
+I 21269 gl
+I 21271 utef
+I 21276 ctax
+I 21281 emit
+B 21292 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 21314 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 21471 E x e c u t i o n
+I 21474 walras
+I 21476 savf
+I 21482 gl
+I 21484 utef
+I 21489 ctax
+I 21494 emit
+B 21505 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 21527 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 21684 E x e c u t i o n
+I 21687 walras
+I 21689 savf
+I 21695 gl
+I 21697 utef
+I 21702 ctax
+I 21707 emit
+B 21718 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 21740 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 21897 E x e c u t i o n
+I 21900 walras
+I 21902 savf
+I 21908 gl
+I 21910 utef
+I 21915 ctax
+I 21920 emit
+B 21931 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 21953 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 22110 E x e c u t i o n
+I 22113 walras
+I 22115 savf
+I 22121 gl
+I 22123 utef
+I 22128 ctax
+I 22133 emit
+B 22144 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 22166 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 22323 E x e c u t i o n
+I 22326 walras
+I 22328 savf
+I 22334 gl
+I 22336 utef
+I 22341 ctax
+I 22346 emit
+I 22355 xaf0
+I 22399 ld0
+I 22455 wage0
+I 22511 rd0
+I 22532 ly0
+I 22537 xlh
+I 22546 tfl0
+I 22550 ctrh0
+I 22555 xcht
+I 22560 xch
+I 22567 ctrw0
+I 22574 xcwt
+I 22582 gtrg0
+I 22586 tp0
+I 22643 tcp0
+I 22648 tcc0
+I 22653 tcf0
+I 22658 tary0
+I 22663 te0
+I 22668 tmg0
+I 22673 tft0
+I 22678 tfk0
+I 22683 tfl0
+I 22688 tfr0
+I 22693 tef0
+I 22697 kappac0
+I 22704 kappah0
+I 22713 wtrg0
+I 22718 gy0
+I 22723 gexp0
+I 22729 te0
+I 22733 yf0
+I 22738 savg0
+I 22743 savh0
+I 22748 savc0
+I 22753 tks0
+I 22758 omegak
+I 22764 aks
+I 22769 omegakt
+I 22772 akst
+I 22777 tk0
+I 22778 KSup0
+I 22781 tks0
+I 22786 kd0
+I 22842 ptks0
+I 22848 PK0
+I 22850 rent0
+I 22907 aks
+I 22912 akst
+I 22917 walras0
+I 22919 savf0
+I 22924 er0
+B 22931 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 22953 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 23008 E x e c u t i o n
+I 23011 walras
+I 23013 savf
+I 23019 gl
+I 23021 utef
+I 23026 ctax
+I 23031 emit
+B 23042 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 23064 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 23170 E x e c u t i o n
+I 23173 walras
+I 23175 savf
+I 23181 gl
+I 23183 utef
+I 23188 ctax
+I 23193 emit
+B 23204 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 23226 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 23383 E x e c u t i o n
+I 23386 walras
+I 23388 savf
+I 23394 gl
+I 23396 utef
+I 23401 ctax
+I 23406 emit
+B 23417 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 23439 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 23596 E x e c u t i o n
+I 23599 walras
+I 23601 savf
+I 23607 gl
+I 23609 utef
+I 23614 ctax
+I 23619 emit
+B 23630 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 23652 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 23809 E x e c u t i o n
+I 23812 walras
+I 23814 savf
+I 23820 gl
+I 23822 utef
+I 23827 ctax
+I 23832 emit
+B 23843 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 23865 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 24022 E x e c u t i o n
+I 24025 walras
+I 24027 savf
+I 24033 gl
+I 24035 utef
+I 24040 ctax
+I 24045 emit
+B 24056 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 24078 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 24235 E x e c u t i o n
+I 24238 walras
+I 24240 savf
+I 24246 gl
+I 24248 utef
+I 24253 ctax
+I 24258 emit
+B 24269 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 24291 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 24448 E x e c u t i o n
+I 24451 walras
+I 24453 savf
+I 24459 gl
+I 24461 utef
+I 24466 ctax
+I 24471 emit
+B 24482 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 24504 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 24661 E x e c u t i o n
+I 24664 walras
+I 24666 savf
+I 24672 gl
+I 24674 utef
+I 24679 ctax
+I 24684 emit
+B 24695 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 24717 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 24874 E x e c u t i o n
+I 24877 walras
+I 24879 savf
+I 24885 gl
+I 24887 utef
+I 24892 ctax
+I 24897 emit
+B 24908 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 24930 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 25087 E x e c u t i o n
+I 25090 walras
+I 25092 savf
+I 25098 gl
+I 25100 utef
+I 25105 ctax
+I 25110 emit
+B 25121 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 25143 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 25300 E x e c u t i o n
+I 25303 walras
+I 25305 savf
+I 25311 gl
+I 25313 utef
+I 25318 ctax
+I 25323 emit
+B 25334 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 25356 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 25513 E x e c u t i o n
+I 25516 walras
+I 25518 savf
+I 25524 gl
+I 25526 utef
+I 25531 ctax
+I 25536 emit
+B 25547 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 25569 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 25726 E x e c u t i o n
+I 25729 walras
+I 25731 savf
+I 25737 gl
+I 25739 utef
+I 25744 ctax
+I 25749 emit
+B 25760 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 25782 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 25939 E x e c u t i o n
+I 25942 walras
+I 25944 savf
+I 25950 gl
+I 25952 utef
+I 25957 ctax
+I 25962 emit
+B 25973 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 25995 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 26152 E x e c u t i o n
+I 26155 walras
+I 26157 savf
+I 26163 gl
+I 26165 utef
+I 26170 ctax
+I 26175 emit
+B 26186 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 26208 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 26365 E x e c u t i o n
+I 26368 walras
+I 26370 savf
+I 26376 gl
+I 26378 utef
+I 26383 ctax
+I 26388 emit
+B 26399 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 26421 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 26578 E x e c u t i o n
+I 26581 walras
+I 26583 savf
+I 26589 gl
+I 26591 utef
+I 26596 ctax
+I 26601 emit
+B 26612 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 26634 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 26791 E x e c u t i o n
+I 26794 walras
+I 26796 savf
+I 26802 gl
+I 26804 utef
+I 26809 ctax
+I 26814 emit
+B 26825 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 26847 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 27004 E x e c u t i o n
+I 27007 walras
+I 27009 savf
+I 27015 gl
+I 27017 utef
+I 27022 ctax
+I 27027 emit
+B 27038 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 27060 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 27217 E x e c u t i o n
+I 27220 walras
+I 27222 savf
+I 27228 gl
+I 27230 utef
+I 27235 ctax
+I 27240 emit
+B 27251 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 27273 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 27430 E x e c u t i o n
+I 27433 walras
+I 27435 savf
+I 27441 gl
+I 27443 utef
+I 27448 ctax
+I 27453 emit
+B 27464 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 27486 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 27643 E x e c u t i o n
+I 27646 walras
+I 27648 savf
+I 27654 gl
+I 27656 utef
+I 27661 ctax
+I 27666 emit
+B 27677 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 27699 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 27856 E x e c u t i o n
+I 27859 walras
+I 27861 savf
+I 27867 gl
+I 27869 utef
+I 27874 ctax
+I 27879 emit
+B 27890 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 27912 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 28069 E x e c u t i o n
+I 28072 walras
+I 28074 savf
+I 28080 gl
+I 28082 utef
+I 28087 ctax
+I 28092 emit
+B 28103 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 28125 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 28282 E x e c u t i o n
+I 28285 walras
+I 28287 savf
+I 28293 gl
+I 28295 utef
+I 28300 ctax
+I 28305 emit
+B 28316 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 28338 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 28495 E x e c u t i o n
+I 28498 walras
+I 28500 savf
+I 28506 gl
+I 28508 utef
+I 28513 ctax
+I 28518 emit
+B 28529 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 28551 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 28708 E x e c u t i o n
+I 28711 walras
+I 28713 savf
+I 28719 gl
+I 28721 utef
+I 28726 ctax
+I 28731 emit
+B 28742 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 28764 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 28921 E x e c u t i o n
+I 28924 walras
+I 28926 savf
+I 28932 gl
+I 28934 utef
+I 28939 ctax
+I 28944 emit
+B 28955 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 28977 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 29134 E x e c u t i o n
+I 29137 walras
+I 29139 savf
+I 29145 gl
+I 29147 utef
+I 29152 ctax
+I 29157 emit
+B 29168 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 29190 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 29347 E x e c u t i o n
+I 29350 walras
+I 29352 savf
+I 29358 gl
+I 29360 utef
+I 29365 ctax
+I 29370 emit
+B 29381 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 29403 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 29560 E x e c u t i o n
+I 29563 walras
+I 29565 savf
+I 29571 gl
+I 29573 utef
+I 29578 ctax
+I 29583 emit
+B 29594 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 29616 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 29773 E x e c u t i o n
+I 29776 walras
+I 29778 savf
+I 29784 gl
+I 29786 utef
+I 29791 ctax
+I 29796 emit
+B 29807 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 29829 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 29986 E x e c u t i o n
+I 29989 walras
+I 29991 savf
+I 29997 gl
+I 29999 utef
+I 30004 ctax
+I 30009 emit
+B 30020 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 30042 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 30199 E x e c u t i o n
+I 30202 walras
+I 30204 savf
+I 30210 gl
+I 30212 utef
+I 30217 ctax
+I 30222 emit
+B 30233 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 30255 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 30412 E x e c u t i o n
+I 30415 walras
+I 30417 savf
+I 30423 gl
+I 30425 utef
+I 30430 ctax
+I 30435 emit
+B 30446 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 30468 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 30625 E x e c u t i o n
+I 30628 walras
+I 30630 savf
+I 30636 gl
+I 30638 utef
+I 30643 ctax
+I 30648 emit
+B 30659 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 30681 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 30838 E x e c u t i o n
+I 30841 walras
+I 30843 savf
+I 30849 gl
+I 30851 utef
+I 30856 ctax
+I 30861 emit
+B 30872 Model Statistics    SOLVE PANDA Using MCP From line 6557
+B 30894 Solution Report     SOLVE PANDA Using MCP From line 6557
+B 31051 E x e c u t i o n
+I 31054 walras
+I 31056 savf
+I 31062 gl
+I 31064 utef
+I 31069 ctax
+I 31074 emit

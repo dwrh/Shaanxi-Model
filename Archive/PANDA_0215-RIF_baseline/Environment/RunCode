@@ -1,0 +1,11 @@
+
+cd  Documents/Research/Energy/EF/EF_China/PANDA
+/users/dwrh1/GAMSMacOS/gams Experiment/PANDA_EXP1.gms o=Experiment/PANDA_EXP1.lst pw=11000 ps=9999
+
+cd /Users/dwrh1/Dropbox/Research/Panda/Panda_0215
+/users/dwrh1/GAMSMacOS/gams Experiment/PANDA_EXP1.gms o=Experiment/PANDA_EXP1.lst pw=11000 ps=9999
+
+git branch EnergyEfficiency_SGE
+git checkout EnergyEfficiency_SGE
+
+

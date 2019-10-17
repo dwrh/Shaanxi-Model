@@ -1,0 +1,27 @@
+
+cd  Documents/Research/Energy/EF/EF_China/PANDA
+/users/dwrh1/GAMSMacOS/gams Experiment/PANDA_EXP1.gms o=Experiment/PANDA_EXP1.lst pw=11000 ps=9999
+
+cd /Users/Sam/Dropbox/Research/Panda/Panda_0215
+/users/sam/GAMSMacOS/gams Experiment/PANDA_EXP1.gms o=Experiment/PANDA_EXP1.lst pw=11000 ps=9999
+/users/sam/GAMSMacOS/gams Experiment/PANDA_EXP_Caps.gms o=Experiment/PANDA_EXP_Caps.lst pw=11000 ps=9999
+
+
+git branch EnergyEfficiency_SGE
+git checkout EnergyEfficiency_SGE
+
+cd /Users/dwrh1/Dropbox/Research/Panda/Panda_0215
+/users/dwrh1/GAMSMacOS/gams Experiment/PANDA_EXP1.gms o=Experiment/PANDA_EXP1.lst pw=11000 ps=9999
+
+cd /Users/ceciliaspringer/Documents/Berkeley/IndependentStudy/PANDA_0215
+/Users/ceciliaspringer/GAMSMacOS/gams Experiment/PANDA_EXP1.gms o=Experiment/PANDA_EXP1.lst pw=11000 ps=9999
+/Users/ceciliaspringer/GAMSMacOS/gams Experiment/PANDA_Exp_CoalTransition.gms o=Experiment/PANDA_Exp_CoalTransition.lst pw=11000 ps=9999
+
+git branch EnergyEfficiency_DRH
+git checkout EnergyEfficiency_DRH
+
+cd /Users/dwrh1/Documents/Models/Panda_0215-SolarCost
+/users/dwrh1/GAMSMacOS/gams Experiment/PANDA_Exp_CoalTransition.gms o=Experiment/PANDA_Exp_CoalTransition.lst pw=11000 ps=9999
+
+
+

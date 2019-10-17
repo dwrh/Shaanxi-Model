@@ -1,0 +1,3751 @@
+
+--- Job PANDA_Exp1.gms Start 02/12/17 14:37:13 24.4.6 r52609 WEX-WEI x86 64bit/MS Windows
+GAMS 24.4.6   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Yaqian Mu                                      G150107:0436AO-WIN
+          Tsinghua University, Res. Centre for International EnvironmDC6727
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- PANDA_Exp1.gms(85) 3 Mb
+--- .Data/panda42_2L.dat(593) 3 Mb
+--- ..Data/IO1242_2L.dat(190) 3 Mb
+--- GDXin=C:\Users\hero\Desktop\Github\Panda\data\SAM_PANDA_2L.gdx
+--- ..Data/IO1242_2L.dat(192) 3 Mb
+--- .Data/panda42_2L.dat(1077) 3 Mb
+--- PANDA_Exp1.gms(87) 3 Mb
+--- .Data/prc42_Emit.dat(49) 3 Mb
+--- GDXin=C:\Users\hero\Desktop\Github\Panda\Data\PRC42_emit.gdx
+--- .Data/prc42_Emit.dat(123) 3 Mb
+--- PANDA_Exp1.gms(88) 3 Mb
+--- .Data/scen2050.dat(189) 3 Mb
+--- PANDA_Exp1.gms(104) 3 Mb
+--- .Code/decl.gms(1040) 3 Mb
+--- PANDA_Exp1.gms(116) 3 Mb
+--- .Code/cal.gms(978) 3 Mb
+--- PANDA_Exp1.gms(127) 3 Mb
+--- .Code/init.gms(265) 3 Mb
+--- PANDA_Exp1.gms(128) 3 Mb
+--- .Code/pandamodel.gms(1014) 3 Mb
+--- PANDA_Exp1.gms(136) 3 Mb
+--- .Code/sam.gms(152) 3 Mb
+--- PANDA_Exp1.gms(153) 3 Mb
+--- .Code/cal.gms(978) 3 Mb
+--- PANDA_Exp1.gms(154) 3 Mb
+--- .Code/init.gms(265) 3 Mb
+--- PANDA_Exp1.gms(184) 3 Mb
+--- .Code/dyncal.gms(187) 3 Mb
+--- PANDA_Exp1.gms(245) 3 Mb
+--- .Code/postsim.gms(314) 3 Mb
+--- PANDA_Exp1.gms(249) 3 Mb
+--- .Code/sam.gms(152) 3 Mb
+--- PANDA_Exp1.gms(254) 3 Mb
+--- Starting execution: elapsed 0:00:00.035
+--- PANDA_Exp1.gms(5170) 9 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- LOOPS scn = BAU
+---       t = 2012
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 12 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:00.256
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Maximum of X. . . . . . . . . .  5.2406e+005 var: (gdpfc)
+Maximum of F. . . . . . . . . .  4.4488e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  5.2406e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  6.5430e+005 eqn: (gyeq(Govt))
+Minimum Row Norm. . . . . . . .  5.1603e-005 eqn: (rdeq(PrecInst))
+Maximum Column Norm . . . . . .  5.2406e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.2256e-004 var: (geg(Apparel,Gas_Power))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             4.6991e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 1.2356e+004  1.0e+000    0.0e+000 (pgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.2356e+004           I 0.0e+000 9.7e+003 (pgdpfceq)
+    1     1     3     3 1.7545e+003  1.0e+000 SO 0.0e+000 1.4e+003 (gdpmpeq)
+    2     1     4     4 2.5337e+003  1.0e+000 SO 0.0e+000 1.8e+003 (gdpmpeq)
+    3     1     5     5 2.9129e+003  1.0e+000 SO 0.0e+000 2.3e+003 (gdpmpeq)
+    4     1     6     6 3.2815e+003  1.0e+000 SO 0.0e+000 2.6e+003 (gdpmpeq)
+    5     1     7     7 3.3094e+003  1.0e+000 SO 0.0e+000 2.6e+003 (gdpmpeq)
+    6     1     8     8 2.7706e+003  1.0e+000 SO 0.0e+000 2.1e+003 (gdpmpeq)
+    7     1     9     9 1.5545e+003  1.0e+000 SO 0.0e+000 1.2e+003 (gdpmpeq)
+    8     1    10    10 3.6012e+002  1.0e+000 SO 0.0e+000 2.7e+002 (gdpmpeq)
+    9     1    11    11 1.2174e+001  1.0e+000 SO 0.0e+000 9.1e+000 (gdpmpeq)
+   10     1    12    12 9.1697e-003  1.0e+000 SO 0.0e+000 6.9e-003 (gdpmpeq)
+   11     1    13    13 4.4422e-009  1.0e+000 SO 0.0e+000 3.2e-009 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.1578e-009 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  3.1578e-009 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  3.1578e-009 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  3.1578e-009 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  9.8840e-004 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  1.0592e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  5.6855e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  3.1578e-009 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  5.6855e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 11
+Minor Iterations. . . . 11
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 13
+Gradient Evaluations. . 13
+Total Time. . . . . . . 0.869000
+Residual. . . . . . . . 4.442182e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:01.216
+--- PANDA_Exp1.gms(5170) 13 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- LOOPS scn = BAU
+---       t = 2013
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 13 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:01.295
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.5798e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  5.6855e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  3.0161e+005 eqn: (gegeq(ICTEqp,ICTEqp))
+Maximum of Grad F . . . . . . .  5.6855e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  5.6855e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.5798e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  5.6855e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  2.9547e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             3.1367e+005             0.0e+000 (gegeq(ICTEqp,ICTEqp))
+    1     1     0 12802 1.1604e+003  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.1604e+003           I 0.0e+000 1.0e+003 (rgdpfceq)
+    1     1     3     3 1.4568e-001  1.0e+000 SO 0.0e+000 1.0e-001 (kdeq(ICTEqp,Cap)
+    2     1     4     4 8.0100e-007  1.0e+000 SO 0.0e+000 5.5e-007 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.5264e-007 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  5.5264e-007 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  5.5264e-007 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  5.5264e-007 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  2.1626e-001 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  2.2696e-001
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  6.1682e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.5264e-007 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  6.1682e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.314000
+Residual. . . . . . . . 8.009996e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:01.726
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- LOOPS scn = BAU
+---       t = 2014
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:01.811
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.5037e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  6.1682e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.5817e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  6.1682e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  6.1682e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.5037e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  6.1682e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  3.2042e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.0100e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 9.6218e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 9.6218e+002           I 0.0e+000 8.5e+002 (rgdpfceq)
+    1     1     3     3 8.9853e-002  1.0e+000 SO 0.0e+000 6.4e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 2.5883e-007  1.0e+000 SO 0.0e+000 1.8e-007 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.7963e-007 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  1.7963e-007 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  1.7963e-007 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  1.7963e-007 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  7.5411e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  7.9064e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  6.6263e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.7963e-007 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  6.6263e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.281000
+Residual. . . . . . . . 2.588294e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:02.196
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- LOOPS scn = BAU
+---       t = 2015
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:02.297
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.4391e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  6.6263e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.6384e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  6.6263e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  6.6263e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.4391e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  6.6263e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  3.4413e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.0965e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 9.0465e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 9.0465e+002           I 0.0e+000 8.0e+002 (rgdpfceq)
+    1     1     3     3 7.3432e-002  1.0e+000 SO 0.0e+000 5.2e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 1.5440e-007  1.0e+000 SO 0.0e+000 1.1e-007 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.0722e-007 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  1.0722e-007 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  1.0722e-007 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  1.0722e-007 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  4.8105e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  5.0434e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  7.0902e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.0722e-007 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  7.0902e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.273000
+Residual. . . . . . . . 1.544046e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:02.685
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- LOOPS scn = BAU
+---       t = 2016
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:02.779
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.3796e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  7.0902e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.7504e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  7.0902e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  7.0902e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.3796e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  7.0902e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  3.6816e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.2338e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 8.7200e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 8.7200e+002           I 0.0e+000 7.8e+002 (rgdpfceq)
+    1     1     3     3 6.3605e-002  1.0e+000 SO 0.0e+000 4.5e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 1.0508e-007  1.0e+000 SO 0.0e+000 7.3e-008 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  7.2963e-008 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  7.2963e-008 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  7.2963e-008 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  7.2963e-008 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  3.4891e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  3.6583e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  7.5652e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.2963e-008 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  7.5652e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.262000
+Residual. . . . . . . . 1.050815e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:03.159
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- LOOPS scn = BAU
+---       t = 2017
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:03.261
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.3239e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  7.5652e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.9174e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  7.5652e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  7.5652e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.3239e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  7.5652e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  3.9277e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.4208e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 8.6252e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 8.6252e+002           I 0.0e+000 7.7e+002 (rgdpfceq)
+    1     1     3     3 5.8346e-002  1.0e+000 SO 0.0e+000 4.2e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 8.1105e-008  1.0e+000 SO 0.0e+000 5.6e-008 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.6199e-008 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  5.6199e-008 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  5.6199e-008 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  5.6199e-008 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  2.8591e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  2.9995e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  8.0569e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.6199e-008 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  8.0569e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.265000
+Residual. . . . . . . . 8.110498e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:03.634
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2018
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:03.737
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.2710e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  8.0569e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.2370e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  8.0569e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  8.0570e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.2710e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  8.0569e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  4.1826e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.7471e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 9.1548e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 9.1548e+002           I 0.0e+000 8.2e+002 (rgdpfceq)
+    1     1     3     3 6.2011e-002  1.0e+000 SO 0.0e+000 4.4e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 8.3170e-008  1.0e+000 SO 0.0e+000 5.8e-008 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.7655e-008 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  5.7655e-008 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  5.7655e-008 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  5.7655e-008 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  3.1207e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  3.2753e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  8.5806e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.7655e-008 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  8.5806e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.255000
+Residual. . . . . . . . 8.316988e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:04.117
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2019
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:04.218
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.2190e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  8.5806e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.5774e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  8.5806e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  8.5807e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.2190e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  8.5806e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  4.4540e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.0960e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 9.7138e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 9.7138e+002           I 0.0e+000 8.7e+002 (rgdpfceq)
+    1     1     3     3 6.5855e-002  1.0e+000 SO 0.0e+000 4.7e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 8.5487e-008  1.0e+000 SO 0.0e+000 5.9e-008 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.9343e-008 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  5.9343e-008 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  5.9343e-008 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  5.9343e-008 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  3.4175e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  3.5874e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  9.1384e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.9343e-008 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  9.1384e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.257000
+Residual. . . . . . . . 8.548679e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:04.602
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2020
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:04.709
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.1680e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  9.1384e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.9400e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  9.1384e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  9.1384e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.1680e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  9.1384e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  4.7431e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.4683e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 1.0304e+003  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.0304e+003           I 0.0e+000 9.3e+002 (rgdpfceq)
+    1     1     3     3 6.9885e-002  1.0e+000 SO 0.0e+000 5.0e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 8.7802e-008  1.0e+000 SO 0.0e+000 6.1e-008 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  6.0827e-008 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  6.0827e-008 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  6.0827e-008 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  6.0827e-008 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  3.7272e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  3.9158e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  9.7324e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.0827e-008 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  9.7324e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.245000
+Residual. . . . . . . . 8.780197e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:05.087
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2021
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:05.185
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.1178e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  9.7324e+005 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.8394e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  9.7324e+005 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  9.7324e+005 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.1178e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  9.7324e+005 var: (pgdpfc)
+Minimum Column Norm . . . . . .  5.0509e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.4198e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 8.9067e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 8.9067e+002           I 0.0e+000 8.0e+002 (rgdpfceq)
+    1     1     3     3 4.8899e-002  1.0e+000 SO 0.0e+000 3.5e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 3.6396e-008  1.0e+000 SO 0.0e+000 2.5e-008 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.4796e-008 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  2.4796e-008 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  2.4796e-008 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  2.4796e-008 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  1.6092e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  1.6922e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.0316e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  2.4796e-008 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  1.0316e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.260000
+Residual. . . . . . . . 3.639600e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:05.569
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2022
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:05.668
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.0726e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.0316e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.1898e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.0316e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.0316e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.0726e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.0316e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  5.3539e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.7771e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 9.4279e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 9.4279e+002           I 0.0e+000 8.5e+002 (rgdpfceq)
+    1     1     3     3 5.1932e-002  1.0e+000 SO 0.0e+000 3.7e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 4.0744e-008  1.0e+000 SO 0.0e+000 2.8e-008 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.7940e-008 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  2.7940e-008 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  2.7940e-008 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  2.7940e-008 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  1.9205e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  2.0214e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.0935e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  2.7940e-008 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  1.0935e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.264000
+Residual. . . . . . . . 4.074440e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:06.046
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2023
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:06.152
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  3.0281e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.0935e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.5612e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.0935e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.0935e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  3.0281e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.0935e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  5.6750e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.1590e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 9.9723e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 9.9723e+002           I 0.0e+000 9.0e+002 (rgdpfceq)
+    1     1     3     3 5.5059e-002  1.0e+000 SO 0.0e+000 4.0e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 4.4604e-008  1.0e+000 SO 0.0e+000 3.1e-008 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.0734e-008 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  3.0734e-008 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  3.0734e-008 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  3.0734e-008 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  2.2142e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  2.3315e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.1591e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  3.0734e-008 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  1.1591e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.264000
+Residual. . . . . . . . 4.460448e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:06.532
+--- PANDA_Exp1.gms(5170) 14 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2024
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 14 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:06.627
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.9844e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.1591e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.9549e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.1591e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.1591e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.9844e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.1591e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  6.0154e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.5647e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 1.0541e+003  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.0541e+003           I 0.0e+000 9.6e+002 (rgdpfceq)
+    1     1     3     3 5.8288e-002  1.0e+000 SO 0.0e+000 4.2e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 4.6385e-008  1.0e+000 SO 0.0e+000 3.2e-008 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.1781e-008 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  3.1781e-008 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  3.1781e-008 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  3.1781e-008 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  2.4508e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  2.5832e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.2287e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  3.1781e-008 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  1.2287e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.266000
+Residual. . . . . . . . 4.638538e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:07.008
+--- PANDA_Exp1.gms(5170) 15 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2025
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 15 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:07.103
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.9413e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.2287e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.3721e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.2287e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.2287e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.9413e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.2287e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  6.3762e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.9955e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 1.1135e+003  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 1.1135e+003           I 0.0e+000 1.0e+003 (rgdpfceq)
+    1     1     3     3 6.1621e-002  1.0e+000 SO 0.0e+000 4.4e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 4.4687e-008  1.0e+000 SO 0.0e+000 3.1e-008 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.0559e-008 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  3.0559e-008 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  3.0559e-008 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  3.0559e-008 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  2.4794e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  2.6182e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.3024e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  3.0559e-008 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  1.3024e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.265000
+Residual. . . . . . . . 4.468714e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:07.489
+--- PANDA_Exp1.gms(5170) 15 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2026
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 15 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:07.588
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.8990e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.3024e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.5121e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.3024e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.3024e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.8990e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.3024e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  6.7587e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.2657e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 6.5806e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 6.5806e+002           I 0.0e+000 5.7e+002 (rgdpfceq)
+    1     1     3     3 2.0454e-002  1.0e+000 SO 0.0e+000 1.4e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 6.5322e-009  1.0e+000 SO 0.0e+000 3.7e-009 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.7253e-009 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  3.7253e-009 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  3.7253e-009 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  3.7253e-009 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  3.0685e-003 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  3.3823e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.3675e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  3.7253e-009 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  1.3675e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.248000
+Residual. . . . . . . . 6.532183e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:07.969
+--- PANDA_Exp1.gms(5170) 15 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2027
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 15 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:08.065
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.8649e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.3675e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.8377e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.3675e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.3675e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.8649e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.3675e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  7.0976e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.5932e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 7.0024e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 7.0024e+002           I 0.0e+000 6.2e+002 (rgdpfceq)
+    1     1     3     3 2.2191e-002  1.0e+000 SO 0.0e+000 1.6e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 5.8448e-009  1.0e+000 SO 0.0e+000 4.3e-009 (kdeq(ICTEqp,Cap)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.3365e-009 eqn: (kdeq(ICTEqp,Capital))
+Inf-Norm of Normal Map. . . . .  4.3365e-009 eqn: (kdeq(ICTEqp,Capital))
+Inf-Norm of Minimum Map . . . .  4.3365e-009 eqn: (kdeq(ICTEqp,Capital))
+Inf-Norm of Fischer Function. .  4.3365e-009 eqn: (kdeq(ICTEqp,Capital))
+Inf-Norm of Grad Fischer Fcn. .  1.5970e-003 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  2.5071e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.4359e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.3365e-009 eqn: (kdeq(ICTEqp,Capital))
+Maximum of Grad F . . . . . . .  1.4359e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.259000
+Residual. . . . . . . . 5.844751e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:08.445
+--- PANDA_Exp1.gms(5170) 15 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2028
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 15 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:08.546
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.8312e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.4359e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.1795e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.4359e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.4359e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.8312e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.4359e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  7.4534e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.9450e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 7.4292e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 7.4292e+002           I 0.0e+000 6.6e+002 (rgdpfceq)
+    1     1     3     3 2.3905e-002  1.0e+000 SO 0.0e+000 1.7e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 1.7731e-008  1.0e+000 SO 0.0e+000 1.3e-008 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.2980e-008 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  1.2980e-008 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  1.2980e-008 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  1.2980e-008 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  1.0248e-002 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  1.1049e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.5077e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.2980e-008 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  1.5077e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.262000
+Residual. . . . . . . . 1.773066e-008
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:08.929
+--- PANDA_Exp1.gms(5170) 15 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2029
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 15 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:09.027
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.7980e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.5077e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.5385e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.5077e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.5077e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.7980e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.5077e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  7.8270e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             8.3157e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 7.8618e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 7.8618e+002           I 0.0e+000 7.0e+002 (rgdpfceq)
+    1     1     3     3 2.5636e-002  1.0e+000 SO 0.0e+000 1.8e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 8.5573e-009  1.0e+000 SO 0.0e+000 7.9e-009 (kdeq(ICTEqp,Cap)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  7.9453e-009 eqn: (kdeq(ICTEqp,Capital))
+Inf-Norm of Normal Map. . . . .  7.9453e-009 eqn: (kdeq(ICTEqp,Capital))
+Inf-Norm of Minimum Map . . . .  7.9453e-009 eqn: (kdeq(ICTEqp,Capital))
+Inf-Norm of Fischer Function. .  7.9453e-009 eqn: (kdeq(ICTEqp,Capital))
+Inf-Norm of Grad Fischer Fcn. .  3.1364e-003 eqn: (xamgeq(FoodPr,MachRep,m))
+Two-Norm of Grad Fischer Fcn. .  3.8729e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.5831e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.9453e-009 eqn: (kdeq(ICTEqp,Capital))
+Maximum of Grad F . . . . . . .  1.5831e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.269000
+Residual. . . . . . . . 8.557286e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:09.425
+--- PANDA_Exp1.gms(5170) 15 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2030
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 15 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:09.549
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.7652e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.5831e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.9154e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.5831e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.5831e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.7652e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.5831e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  8.2193e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             8.7061e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 8.3009e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 8.3009e+002           I 0.0e+000 7.4e+002 (rgdpfceq)
+    1     1     3     3 2.7321e-002  1.0e+000 SO 0.0e+000 2.0e-002 (kdeq(ICTEqp,Cap)
+    2     1     4     4 8.6789e-009  1.0e+000 SO 0.0e+000 5.1e-009 (pgdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  5.1223e-009 eqn: (pgdpmpeq)
+Inf-Norm of Normal Map. . . . .  5.1223e-009 eqn: (pgdpmpeq)
+Inf-Norm of Minimum Map . . . .  5.1223e-009 eqn: (pgdpmpeq)
+Inf-Norm of Fischer Function. .  5.1223e-009 eqn: (pgdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  5.3256e-003 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  5.8164e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.6622e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.1223e-009 eqn: (pgdpmpeq)
+Maximum of Grad F . . . . . . .  1.6622e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.245000
+Residual. . . . . . . . 8.678935e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:09.906
+--- PANDA_Exp1.gms(5170) 15 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- LOOPS scn = BAU
+---       t = 2031
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 15 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:10.020
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.7328e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.6622e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.1530e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.6622e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.6622e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.7328e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.6622e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  8.6312e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.3716e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 4.5604e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 4.5604e+002           I 0.0e+000 3.8e+002 (rgdpfceq)
+    1     1     3     3 4.5571e-003  1.0e+000 SO 0.0e+000 2.2e-003 (rgdpfceq)
+    2     1     4     4 2.1964e-009  1.0e+000 SO 0.0e+000 1.8e-009 (lambdakeq(Finan)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.7682e-009 eqn: (lambdakeq(Finance,Capital))
+Inf-Norm of Normal Map. . . . .  1.7682e-009 eqn: (lambdakeq(Finance,Capital))
+Inf-Norm of Minimum Map . . . .  1.7682e-009 eqn: (lambdakeq(Finance,Capital))
+Inf-Norm of Fischer Function. .  1.7682e-009 eqn: (lambdakeq(Finance,Capital))
+Inf-Norm of Grad Fischer Fcn. .  3.1190e-004 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  4.2685e-004
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.7138e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.7682e-009 eqn: (lambdakeq(Finance,Capital))
+Maximum of Grad F . . . . . . .  1.7138e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.264000
+Residual. . . . . . . . 2.196445e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:10.420
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2032
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:10.523
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.7148e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.7138e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.3127e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.7138e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.7138e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.7148e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.7138e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  8.9021e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.5045e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 3.9794e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.9794e+002           I 0.0e+000 3.1e+002 (rgdpfceq)
+    1     1     3     3 3.5051e-003  1.0e+000 SO 0.0e+000 1.8e-003 (rgdpfceq)
+    2     1     4     4 4.7485e-009  1.0e+000 SO 0.0e+000 2.6e-009 (pndeq(ICTEqp))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.6346e-009 eqn: (pndeq(ICTEqp))
+Inf-Norm of Normal Map. . . . .  2.6346e-009 eqn: (pndeq(ICTEqp))
+Inf-Norm of Minimum Map . . . .  2.6346e-009 eqn: (pndeq(ICTEqp))
+Inf-Norm of Fischer Function. .  2.6346e-009 eqn: (pndeq(ICTEqp))
+Inf-Norm of Grad Fischer Fcn. .  3.8579e-004 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  4.8408e-004
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.7669e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  2.6346e-009 eqn: (pndeq(ICTEqp))
+Maximum of Grad F . . . . . . .  1.7669e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.246000
+Residual. . . . . . . . 4.748494e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:10.905
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2033
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:11.014
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6969e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.7669e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.4774e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.7669e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.7669e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.6969e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.7669e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  9.1813e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.6610e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 3.4837e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.4837e+002           I 0.0e+000 2.6e+002 (rgdpfceq)
+    1     1     3     3 2.7994e-003  1.0e+000 SO 0.0e+000 1.4e-003 (rgdpfceq)
+    2     1     4     4 2.5721e-009  1.0e+000 SO 0.0e+000 1.9e-009 (rgdpfceq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.8626e-009 eqn: (rgdpfceq)
+Inf-Norm of Normal Map. . . . .  1.8626e-009 eqn: (rgdpfceq)
+Inf-Norm of Minimum Map . . . .  1.8626e-009 eqn: (rgdpfceq)
+Inf-Norm of Fischer Function. .  1.8626e-009 eqn: (rgdpfceq)
+Inf-Norm of Grad Fischer Fcn. .  7.9529e-004 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  1.0434e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.8217e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.8626e-009 eqn: (rgdpfceq)
+Maximum of Grad F . . . . . . .  1.8217e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.259000
+Residual. . . . . . . . 2.572059e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:11.407
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2034
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:11.512
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6790e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.8217e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.6472e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.8217e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8217e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.6790e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.8217e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  9.4690e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.8248e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 3.0669e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.0669e+002           I 0.0e+000 2.1e+002 (rgdpfceq)
+    1     1     3     3 2.3174e-003  1.0e+000 SO 0.0e+000 1.1e-003 (rgdpfceq)
+    2     1     4     4 4.4324e-009  1.0e+000 SO 0.0e+000 4.2e-009 (pkskeq(AgFFF))
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  4.2281e-009 eqn: (pkskeq(AgFFF))
+Inf-Norm of Normal Map. . . . .  4.2281e-009 eqn: (pkskeq(AgFFF))
+Inf-Norm of Minimum Map . . . .  4.2281e-009 eqn: (pkskeq(AgFFF))
+Inf-Norm of Fischer Function. .  4.2281e-009 eqn: (pkskeq(AgFFF))
+Inf-Norm of Grad Fischer Fcn. .  2.0493e-004 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  2.2498e-004
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.8781e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.2281e-009 eqn: (pkskeq(AgFFF))
+Maximum of Grad F . . . . . . .  1.8781e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.256000
+Residual. . . . . . . . 4.432419e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:11.894
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2035
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:11.994
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6612e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.8781e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.8223e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.8781e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.8781e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.6612e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.8781e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  9.7656e-005 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.9961e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 2.7251e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.7251e+002           I 0.0e+000 1.6e+002 (rgdpfceq)
+    1     1     3     3 1.9799e-003  1.0e+000 SO 0.0e+000 8.2e-004 (kdeq(Textile,Ca)
+    2     1     4     4 1.6445e-009  1.0e+000 SO 0.0e+000 9.3e-010 (rgdpfceq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  9.3132e-010 eqn: (rgdpfceq)
+Inf-Norm of Normal Map. . . . .  9.3132e-010 eqn: (rgdpfceq)
+Inf-Norm of Minimum Map . . . .  9.3132e-010 eqn: (rgdpfceq)
+Inf-Norm of Fischer Function. .  9.3132e-010 eqn: (rgdpfceq)
+Inf-Norm of Grad Fischer Fcn. .  2.2191e-004 eqn: (gegeq(PubAdm,ICTServ))
+Two-Norm of Grad Fischer Fcn. .  3.7672e-004
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.9364e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  9.3132e-010 eqn: (rgdpfceq)
+Maximum of Grad F . . . . . . .  1.9364e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.269000
+Residual. . . . . . . . 1.644497e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:12.384
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2036
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:12.484
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6436e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.9364e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.4218e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.9364e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9364e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.6436e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.9364e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.0071e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.6965e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 3.8156e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.8156e+002           I 0.0e+000 3.1e+002 (rgdpfceq)
+    1     1     3     3 3.0088e-003  1.0e+000 SO 0.0e+000 1.4e-003 (rgdpfceq)
+    2     1     4     4 1.5071e-009  1.0e+000 SO 0.0e+000 7.0e-010 (rgdpfceq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  6.9849e-010 eqn: (rgdpfceq)
+Inf-Norm of Normal Map. . . . .  6.9849e-010 eqn: (rgdpfceq)
+Inf-Norm of Minimum Map . . . .  6.9849e-010 eqn: (rgdpfceq)
+Inf-Norm of Fischer Function. .  6.9849e-010 eqn: (rgdpfceq)
+Inf-Norm of Grad Fischer Fcn. .  3.6181e-004 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  4.6477e-004
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.9906e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.9849e-010 eqn: (rgdpfceq)
+Maximum of Grad F . . . . . . .  1.9906e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.264000
+Residual. . . . . . . . 1.507103e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:12.870
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2037
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:12.975
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6282e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  1.9906e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.5736e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  1.9906e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  1.9906e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.6282e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  1.9906e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.0357e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.8398e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 3.3931e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.3931e+002           I 0.0e+000 2.6e+002 (rgdpfceq)
+    1     1     3     3 2.4740e-003  1.0e+000 SO 0.0e+000 1.2e-003 (rgdpfceq)
+    2     1     4     4 3.0781e-009  1.0e+000 SO 0.0e+000 1.6e-009 (rgdpfceq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.6298e-009 eqn: (rgdpfceq)
+Inf-Norm of Normal Map. . . . .  1.6298e-009 eqn: (rgdpfceq)
+Inf-Norm of Minimum Map . . . .  1.6298e-009 eqn: (rgdpfceq)
+Inf-Norm of Fischer Function. .  1.6298e-009 eqn: (rgdpfceq)
+Inf-Norm of Grad Fischer Fcn. .  3.8310e-004 eqn: (gegeq(PubAdm,ICTServ))
+Two-Norm of Grad Fischer Fcn. .  5.6952e-004
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.0463e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.6298e-009 eqn: (rgdpfceq)
+Maximum of Grad F . . . . . . .  2.0463e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.258000
+Residual. . . . . . . . 3.078092e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:13.360
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2038
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:13.466
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.6128e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.0463e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.7297e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.0463e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.0463e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.6128e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.0463e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.0650e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.9919e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 3.0290e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.0290e+002           I 0.0e+000 2.2e+002 (rgdpfceq)
+    1     1     3     3 2.0900e-003  1.0e+000 SO 0.0e+000 9.4e-004 (kdeq(Textile,Ca)
+    2     1     4     4 1.9209e-007  1.0e+000 SO 0.0e+000 1.8e-007 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.8440e-007 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  1.8440e-007 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  1.8440e-007 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  1.8440e-007 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  6.8107e-002 eqn: (gegeq(Finance,Finance))
+Two-Norm of Grad Fischer Fcn. .  1.0153e-001
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.1036e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.8440e-007 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.1036e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.265000
+Residual. . . . . . . . 1.920919e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:13.846
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2039
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:13.947
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5976e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.1036e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  5.8901e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.1036e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.1036e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5976e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.1036e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.0951e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.1504e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 2.7191e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.7191e+002           I 0.0e+000 1.9e+002 (rgdpfceq)
+    1     1     3     3 1.8027e-003  1.0e+000 SO 0.0e+000 8.0e-004 (kdeq(Textile,Ca)
+    2     1     4     4 7.0962e-009  1.0e+000 SO 0.0e+000 6.2e-009 (lambdakeq(Chemi)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  6.1741e-009 eqn: (lambdakeq(Chemical,Capital))
+Inf-Norm of Normal Map. . . . .  6.1741e-009 eqn: (lambdakeq(Chemical,Capital))
+Inf-Norm of Minimum Map . . . .  6.1741e-009 eqn: (lambdakeq(Chemical,Capital))
+Inf-Norm of Fischer Function. .  6.1741e-009 eqn: (lambdakeq(Chemical,Capital))
+Inf-Norm of Grad Fischer Fcn. .  7.1734e-004 eqn: (gegeq(PubAdm,ICTServ))
+Two-Norm of Grad Fischer Fcn. .  1.0870e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.1625e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.1741e-009 eqn: (lambdakeq(Chemical,Capital))
+Maximum of Grad F . . . . . . .  2.1625e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.258000
+Residual. . . . . . . . 7.096160e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:14.332
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2040
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:14.438
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5824e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.1625e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.0551e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.1625e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.1625e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5824e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.1625e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.1261e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             7.3155e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 2.4606e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 2.4606e+002           I 0.0e+000 1.5e+002 (rgdpfceq)
+    1     1     3     3 1.5860e-003  1.0e+000 SO 0.0e+000 6.7e-004 (kdeq(Textile,Ca)
+    2     1     4     4 1.9208e-007  1.0e+000 SO 0.0e+000 1.9e-007 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.8720e-007 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  1.8720e-007 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  1.8720e-007 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  1.8720e-007 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  7.2830e-002 eqn: (gegeq(Finance,Finance))
+Two-Norm of Grad Fischer Fcn. .  9.8690e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.2231e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.8720e-007 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.2231e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.262000
+Residual. . . . . . . . 1.920832e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:14.815
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2041
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:14.915
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5673e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.2231e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.2238e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.2231e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.2231e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5673e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.2231e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.1580e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.9290e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 7.4994e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 7.4994e+002           I 0.0e+000 7.1e+002 (rgdpfceq)
+    1     1     3     3 9.9569e-003  1.0e+000 SO 0.0e+000 5.0e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 1.3988e-009  1.0e+000 SO 0.0e+000 7.7e-010 (kdeq(Metals,Cap)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  7.7125e-010 eqn: (kdeq(Metals,Capital))
+Inf-Norm of Normal Map. . . . .  7.7125e-010 eqn: (kdeq(Metals,Capital))
+Inf-Norm of Minimum Map . . . .  7.7125e-010 eqn: (kdeq(Metals,Capital))
+Inf-Norm of Fischer Function. .  7.7125e-010 eqn: (kdeq(Metals,Capital))
+Inf-Norm of Grad Fischer Fcn. .  1.5638e-004 eqn: (xamgeq(FoodPr,MachRep,m))
+Two-Norm of Grad Fischer Fcn. .  2.8015e-004
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.2653e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.7125e-010 eqn: (kdeq(Metals,Capital))
+Maximum of Grad F . . . . . . .  2.2653e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.265000
+Residual. . . . . . . . 1.398839e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:15.294
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2042
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:15.393
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5587e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.2653e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.3041e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.2653e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.2653e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5587e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.2653e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.1804e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             5.9780e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 6.8352e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 6.8352e+002           I 0.0e+000 6.4e+002 (rgdpfceq)
+    1     1     3     3 8.0906e-003  1.0e+000 SO 0.0e+000 4.1e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 4.3489e-009  1.0e+000 SO 0.0e+000 3.3e-009 (rgdpfceq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.2596e-009 eqn: (rgdpfceq)
+Inf-Norm of Normal Map. . . . .  3.2596e-009 eqn: (rgdpfceq)
+Inf-Norm of Minimum Map . . . .  3.2596e-009 eqn: (rgdpfceq)
+Inf-Norm of Fischer Function. .  3.2596e-009 eqn: (rgdpfceq)
+Inf-Norm of Grad Fischer Fcn. .  9.2175e-004 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  1.6670e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.3084e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  3.2596e-009 eqn: (rgdpfceq)
+Maximum of Grad F . . . . . . .  2.3084e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.270000
+Residual. . . . . . . . 4.348933e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:15.770
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2043
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:15.871
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5501e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.3084e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.3859e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.3084e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.3084e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5501e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.3084e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.2033e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.0389e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 6.2441e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 6.2441e+002           I 0.0e+000 5.9e+002 (rgdpfceq)
+    1     1     3     3 6.6202e-003  1.0e+000 SO 0.0e+000 3.4e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 7.6341e-009  1.0e+000 SO 0.0e+000 6.6e-009 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  6.6357e-009 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  6.6357e-009 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  6.6357e-009 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  6.6357e-009 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  3.1587e-003 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  4.6000e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.3522e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  6.6357e-009 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.3522e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.259000
+Residual. . . . . . . . 7.634055e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:16.256
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2044
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:16.356
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5415e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.3522e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.4692e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.3522e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.3522e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5415e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.3522e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.2266e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.1037e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 5.7165e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 5.7165e+002           I 0.0e+000 5.3e+002 (rgdpfceq)
+    1     1     3     3 5.4568e-003  1.0e+000 SO 0.0e+000 2.8e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 8.0916e-009  1.0e+000 SO 0.0e+000 7.2e-009 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  7.2177e-009 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  7.2177e-009 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  7.2177e-009 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  7.2177e-009 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  3.4789e-003 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  5.0123e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.3969e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.2177e-009 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.3969e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.285000
+Residual. . . . . . . . 8.091647e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:16.740
+--- PANDA_Exp1.gms(5170) 16 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 18 Mb
+--- LOOPS scn = BAU
+---       t = 2045
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 16 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:16.849
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5329e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.3969e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.5541e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.3969e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.3969e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5329e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.3969e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.2503e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.1724e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 5.2442e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 5.2442e+002           I 0.0e+000 4.9e+002 (rgdpfceq)
+    1     1     3     3 4.5326e-003  1.0e+000 SO 0.0e+000 2.3e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 2.1301e-007  1.0e+000 SO 0.0e+000 2.1e-007 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.0559e-007 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  2.0559e-007 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  2.0559e-007 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  2.0559e-007 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  8.6823e-002 eqn: (gegeq(Finance,Finance))
+Two-Norm of Grad Fischer Fcn. .  1.2565e-001
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.4424e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  2.0559e-007 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.4424e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.274000
+Residual. . . . . . . . 2.130149e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:17.223
+--- PANDA_Exp1.gms(5170) 17 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 19 Mb
+--- LOOPS scn = BAU
+---       t = 2046
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:17.323
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5243e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.4424e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.3964e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.4424e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.4424e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5243e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.4424e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.2745e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.0656e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 5.4357e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 5.4357e+002           I 0.0e+000 5.1e+002 (rgdpfceq)
+    1     1     3     3 4.7672e-003  1.0e+000 SO 0.0e+000 2.5e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 2.2713e-007  1.0e+000 SO 0.0e+000 2.2e-007 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  2.1921e-007 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  2.1921e-007 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  2.1921e-007 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  2.1921e-007 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  9.4018e-002 eqn: (gegeq(Finance,Finance))
+Two-Norm of Grad Fischer Fcn. .  1.3585e-001
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.4864e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  2.1921e-007 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.4864e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.281000
+Residual. . . . . . . . 2.271275e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:17.710
+--- PANDA_Exp1.gms(5170) 17 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 19 Mb
+--- LOOPS scn = BAU
+---       t = 2047
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:17.810
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5164e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.4864e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.4755e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.4864e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.4864e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5164e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.4864e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.2978e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.1280e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 5.0075e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 5.0075e+002           I 0.0e+000 4.7e+002 (rgdpfceq)
+    1     1     3     3 4.0202e-003  1.0e+000 SO 0.0e+000 2.1e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 1.7005e-007  1.0e+000 SO 0.0e+000 1.7e-007 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  1.6543e-007 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  1.6543e-007 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  1.6543e-007 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  1.6543e-007 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  7.2075e-002 eqn: (gegeq(Finance,Finance))
+Two-Norm of Grad Fischer Fcn. .  9.9151e-002
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.5312e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  1.6543e-007 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.5312e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.253000
+Residual. . . . . . . . 1.700474e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:18.190
+--- PANDA_Exp1.gms(5170) 17 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 19 Mb
+--- LOOPS scn = BAU
+---       t = 2048
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:18.296
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5085e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.5312e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.5561e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.5312e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.5312e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5085e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.5312e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.3216e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.1948e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 4.6221e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 4.6221e+002           I 0.0e+000 4.3e+002 (rgdpfceq)
+    1     1     3     3 3.4049e-003  1.0e+000 SO 0.0e+000 1.7e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 8.6813e-009  1.0e+000 SO 0.0e+000 7.3e-009 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  7.3342e-009 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  7.3342e-009 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  7.3342e-009 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  7.3342e-009 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  3.4563e-003 eqn: (gegeq(Health,MetalPr))
+Two-Norm of Grad Fischer Fcn. .  5.4270e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.5767e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  7.3342e-009 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.5767e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.269000
+Residual. . . . . . . . 8.681275e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:18.673
+--- PANDA_Exp1.gms(5170) 17 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 19 Mb
+--- LOOPS scn = BAU
+---       t = 2049
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:18.774
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.5006e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.5767e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.6381e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.5767e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.5767e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.5006e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.5767e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.3458e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.2651e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 4.2745e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 4.2745e+002           I 0.0e+000 4.0e+002 (rgdpfceq)
+    1     1     3     3 2.9254e-003  1.0e+000 SO 0.0e+000 1.5e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 9.8757e-007  1.0e+000 SO 0.0e+000 9.6e-007 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  9.5845e-007 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  9.5845e-007 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  9.5845e-007 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  9.5845e-007 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  4.3074e-001 eqn: (gegeq(Finance,Finance))
+Two-Norm of Grad Fischer Fcn. .  6.0576e-001
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.6231e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  9.5845e-007 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.6231e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.279000
+Residual. . . . . . . . 9.875659e-007
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:19.153
+--- PANDA_Exp1.gms(5170) 17 Mb
+--- Generating MCP model PANDA
+--- PANDA_Exp1.gms(6648) 19 Mb
+--- LOOPS scn = BAU
+---       t = 2050
+---   12,802 rows  12,802 columns  48,406 non-zeroes
+---   26,756 nl-code  9,462 nl-non-zeroes
+--- PANDA_Exp1.gms(6648) 17 Mb
+--- Executing PATH (Solvelink=2): elapsed 0:00:19.275
+Reading dictionary...
+Reading row data...
+Evaluating functions...
+Checking model...
+Calculating Jacobian...
+
+PATH             24.4.6 r52609 Released Jun 26, 2015 WEI x86 64bit/MS Windows 
+
+12802 row/cols, 48406 non-zeros, 0.03% dense.
+
+Path 4.7.02 (Fri Jun 26 15:39:32 2015)
+Written by Todd Munson, Steven Dirkse, and Michael Ferris
+
+
+INITIAL POINT STATISTICS
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.4927e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.6231e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  4.7216e+004 eqn: (ggdpeq)
+Maximum of Grad F . . . . . . .  2.6231e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+INITIAL JACOBIAN NORM STATISTICS
+Maximum Row Norm. . . . . . . .  2.6231e+006 eqn: (pgdpfceq)
+Minimum Row Norm. . . . . . . .  2.4927e-007 eqn: (rdeq(AgFFF))
+Maximum Column Norm . . . . . .  2.6231e+006 var: (pgdpfc)
+Minimum Column Norm . . . . . .  1.3704e-004 var: (geg(WoodPr,Solar))
+
+Crash Log
+major  func  diff  size  residual    step       prox   (label)
+    0     0             6.3388e+004             0.0e+000 (ggdpeq)
+    1     1     0 12802 3.9605e+002  1.0e+000    0.0e+000 (rgdpfceq)
+pn_search terminated: no basis change.
+
+Major Iteration Log
+major minor  func  grad  residual    step  type prox    inorm  (label)
+    0     0     2     2 3.9605e+002           I 0.0e+000 3.6e+002 (rgdpfceq)
+    1     1     3     3 2.5702e-003  1.0e+000 SO 0.0e+000 1.3e-003 (kdeq(WhRetTr,Ca)
+    2     1     4     4 4.6106e-009  1.0e+000 SO 0.0e+000 3.4e-009 (gdpmpeq)
+
+FINAL STATISTICS
+Inf-Norm of Complementarity . .  3.4343e-009 eqn: (gdpmpeq)
+Inf-Norm of Normal Map. . . . .  3.4343e-009 eqn: (gdpmpeq)
+Inf-Norm of Minimum Map . . . .  3.4343e-009 eqn: (gdpmpeq)
+Inf-Norm of Fischer Function. .  3.4343e-009 eqn: (gdpmpeq)
+Inf-Norm of Grad Fischer Fcn. .  1.5661e-003 eqn: (gegeq(Finance,Finance))
+Two-Norm of Grad Fischer Fcn. .  2.0295e-003
+
+FINAL POINT STATISTICS
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(AgFFF))
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(Coal))
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(OilGas))
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(MetMin))
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(NMetMin))
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(FoodPr))
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(Textile))
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(Apparel))
+Zero row of order . . . . . . .  2.4848e-007 eqn: (rdeq(WoodPr))
+Total zero rows . . . . . . . .  44
+Maximum of X. . . . . . . . . .  2.6703e+006 var: (rgdpfc)
+Maximum of F. . . . . . . . . .  3.4343e-009 eqn: (gdpmpeq)
+Maximum of Grad F . . . . . . .  2.6703e+006 eqn: (pgdpfceq)
+                                            var: (pgdpfc)
+
+ ** EXIT - solution found.
+
+Major Iterations. . . . 2
+Minor Iterations. . . . 2
+Restarts. . . . . . . . 0
+Crash Iterations. . . . 1
+Gradient Steps. . . . . 0
+Function Evaluations. . 4
+Gradient Evaluations. . 4
+Total Time. . . . . . . 0.250000
+Residual. . . . . . . . 4.610603e-009
+
+--- Reading solution for model PANDA
+--- Executing after solve: elapsed 0:00:19.632
+--- PANDA_Exp1.gms(5170) 17 Mb
+--- Putfile reportfile C:\Users\hero\Desktop\Github\Panda\Output/Panda.csv
+--- Putfile samout C:\Users\hero\Desktop\Github\Panda\Output/samout.csv
+--- Putfile screen C:\Users\hero\Desktop\Github\Panda\con
+*** Status: Normal completion
+--- Job PANDA_Exp1.gms Stop 02/12/17 14:37:33 elapsed 0:00:19.650

@@ -1,0 +1,991 @@
+* --
+* -- PANDA - PRC Aggregate National Development Assessment Model
+* --
+* --           All rights reserved
+* --
+* --           David Roland-Holst, Samuel G. Evans
+* --           Cecilia Han Springer, and MU Yaqian
+* --
+* --           Berkeley Energy and Resources, BEAR LLC
+* --           1442A Walnut Street, Suite 108
+* --           Berkeley, CA 94705 USA
+* --
+* --           Email: dwrh@berkeley.edu
+* --           Tel: 510-220-4567
+* --           Fax: 510-524-4591
+* --
+* --           October, 2016
+
+* --
+
+*## ca13.dat
+*##
+*## This file creates an aggregated datafrom the 2013 China SAM
+*## Also included are a variety of declarations and initial data for the model
+*##
+
+*## Define the aggregate SAM institution sets and subsets
+
+set
+s labels for the micro sam /
+AgFFF
+Coal
+OilGas
+MetMin
+NMetMin
+FoodPr
+Textile
+Apparel
+WoodPr
+PaperPr
+RefPet
+Chemical
+NMetPr
+Metals
+MetalPr
+GenEqp
+SpecEqp
+TransEqp
+ElecEqp
+ICTEqp
+PrecInst
+OthMfg
+Waste
+MachRep
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+WatDist
+Constr
+WhRetTr
+TranspSrv
+HotRest
+ICTServ
+Finance
+RealEst
+BusServe
+ResTech
+EnvServ
+ResServ
+Education
+Health
+RecEnt
+PubAdm
+
+LabSk
+LabUn
+
+Capital
+prodtax
+Depr
+
+HHRural
+HHUrban
+Govt
+Capacct
+Invent
+ROW
+ENTERPRISE
+
+Total
+
+Land
+Natr
+/
+
+i(s) activities /
+AgFFF
+Coal
+OilGas
+MetMin
+NMetMin
+FoodPr
+Textile
+Apparel
+WoodPr
+PaperPr
+RefPet
+Chemical
+NMetPr
+Metals
+MetalPr
+GenEqp
+SpecEqp
+TransEqp
+ElecEqp
+ICTEqp
+PrecInst
+OthMfg
+Waste
+MachRep
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+WatDist
+Constr
+WhRetTr
+TranspSrv
+HotRest
+ICTServ
+Finance
+RealEst
+BusServe
+ResTech
+EnvServ
+ResServ
+Education
+Health
+RecEnt
+PubAdm
+/
+;
+
+alias (i,k) ;
+
+set
+
+inst(s) /
+LabSk
+LabUn
+
+ProdTax
+Depr
+Capital
+HHRural
+HHUrban
+Enterprise
+Govt
+Capacct
+Invent
+ROW
+/
+
+food(k) food commodities /
+AgFFF
+FoodPr
+/
+
+inr(i) natural resource activities /
+AgFFF
+*Coal
+*OilGas
+*MetMin
+*NMetMin
+/
+
+manufac(k) manufactured commodities /
+FoodPr
+Textile
+Apparel
+WoodPr
+PaperPr
+RefPet
+Chemical
+NMetPr
+Metals
+MetalPr
+GenEqp
+SpecEqp
+TransEqp
+ElecEqp
+ICTEqp
+PrecInst
+OthMfg
+Waste
+MachRep
+/
+
+m(k) sectors as intermediate Input /
+AgFFF
+
+OilGas
+MetMin
+NMetMin
+FoodPr
+Textile
+Apparel
+WoodPr
+PaperPr
+
+Chemical
+NMetPr
+Metals
+MetalPr
+GenEqp
+SpecEqp
+TransEqp
+ElecEqp
+ICTEqp
+PrecInst
+OthMfg
+Waste
+MachRep
+
+WatDist
+Constr
+WhRetTr
+TranspSrv
+HotRest
+ICTServ
+Finance
+RealEst
+BusServe
+ResTech
+EnvServ
+ResServ
+Education
+Health
+RecEnt
+PubAdm
+/
+
+erg(k) energy commodities /
+Coal
+OilGas
+RefPet
+
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+/
+
+iutil(i) utility activites /
+T_D
+GasDist
+WatDist
+/
+
+ielec(i) electric power activities /
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+/
+
+iren(i) renewable electric power activities /
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+/
+
+kutil(k) utility commodities /
+T_D
+GasDist
+WatDist
+/
+
+kelec(k) electric power commodities /
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+/
+
+kren(k) renewable electric power activities /
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+/
+
+services(k) service commodities /
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+WatDist
+Constr
+WhRetTr
+TranspSrv
+HotRest
+ICTServ
+Finance
+RealEst
+BusServe
+ResTech
+EnvServ
+ResServ
+Education
+Health
+RecEnt
+PubAdm
+/
+
+v(s) factors /
+LabSk
+LabUn
+
+Capital
+Land
+Natr
+/
+
+l(v) labor types /
+LabSk
+LabUn
+/
+
+ul(l) unskilled labor /
+LabUn
+/
+
+sl(l) skilled labor /
+LabSk
+/
+
+lt(v) Land types / land /
+kt(v) Capital types / Capital /
+nr(v) Natural resources /natr /
+
+e(s) enterprises /
+enterprise
+/
+
+fd(s) final demand accounts /
+HHRural
+HHUrban
+*enterprise
+capacct
+prodtax
+govt
+/
+
+h(fd) households /
+HHRural
+HHUrban
+/
+
+hr(fd) households /
+HHRural
+HHUrban
+/
+
+lyh(h) low income households /
+HHRural
+/
+
+hs(fd) subsistence consumption for households /
+HHRural
+*HHUrban
+/
+
+f(fd) final demand /
+*enterprise
+govt
+capacct
+/
+
+g(f) government accounts /
+govt
+/
+
+r(s) trading partners /
+row
+/ ;
+
+alias (lyh,llyh), (ielec, iielec), (kelec, kkelec) ;
+
+*## Define the institution sets and subsets     for the complete SAM
+
+set
+lt0(v) Land types / land /
+kt0(v) Capital types / Capital /
+nr0(v) Natural resources /natr /
+;
+
+
+*## Define the activity commodity correspondence
+set
+mapik(i,k)   Aggregation mapping from activities to commodities /
+AgFFF	.	AgFFF
+Coal	.	Coal
+OilGas	.	OilGas
+MetMin	.	MetMin
+NMetMin	.	NMetMin
+FoodPr	.	FoodPr
+Textile	.	Textile
+Apparel	.	Apparel
+WoodPr	.	WoodPr
+PaperPr	.	PaperPr
+RefPet	.	RefPet
+Chemical	.	Chemical
+NMetPr	.	NMetPr
+Metals	.	Metals
+MetalPr	.	MetalPr
+GenEqp	.	GenEqp
+SpecEqp	.	SpecEqp
+TransEqp	.	TransEqp
+ElecEqp	.	ElecEqp
+ICTEqp	.	ICTEqp
+PrecInst	.	PrecInst
+OthMfg	.	OthMfg
+Waste	.	Waste
+MachRep	.	MachRep
+T_D	.	T_D
+Coal_Power	.	Coal_Power
+Oil_Power	.	Oil_Power
+Gas_Power	.	Gas_Power
+Nuclear	.	Nuclear
+Hydro	.	Hydro
+Wind	.	Wind
+Solar	.	Solar
+Biomass	.	Biomass
+GasDist	.	GasDist
+WatDist	.	WatDist
+Constr	.	Constr
+WhRetTr	.	WhRetTr
+TranspSrv	.	TranspSrv
+HotRest	.	HotRest
+ICTServ	.	ICTServ
+Finance	.	Finance
+RealEst	.	RealEst
+BusServe	.	BusServe
+ResTech	.	ResTech
+EnvServ	.	EnvServ
+ResServ	.	ResServ
+Education	.	Education
+Health	.	Health
+RecEnt	.	RecEnt
+PubAdm	.	PubAdm
+/
+
+mapik0(i,k)   Aggregation mapping from activities to commodities /
+AgFFF	.	AgFFF
+Coal	.	Coal
+OilGas	.	OilGas
+MetMin	.	MetMin
+NMetMin	.	NMetMin
+FoodPr	.	FoodPr
+Textile	.	Textile
+Apparel	.	Apparel
+WoodPr	.	WoodPr
+PaperPr	.	PaperPr
+RefPet	.	RefPet
+Chemical	.	Chemical
+NMetPr	.	NMetPr
+Metals	.	Metals
+MetalPr	.	MetalPr
+GenEqp	.	GenEqp
+SpecEqp	.	SpecEqp
+TransEqp	.	TransEqp
+ElecEqp	.	ElecEqp
+ICTEqp	.	ICTEqp
+PrecInst	.	PrecInst
+OthMfg	.	OthMfg
+Waste	.	Waste
+MachRep	.	MachRep
+T_D	.	T_D
+Coal_Power	.	Coal_Power
+Oil_Power	.	Oil_Power
+Gas_Power	.	Gas_Power
+Nuclear	.	Nuclear
+Hydro	.	Hydro
+Wind	.	Wind
+Solar	.	Solar
+Biomass	.	Biomass
+GasDist	.	GasDist
+WatDist	.	WatDist
+Constr	.	Constr
+WhRetTr	.	WhRetTr
+TranspSrv	.	TranspSrv
+HotRest	.	HotRest
+ICTServ	.	ICTServ
+Finance	.	Finance
+RealEst	.	RealEst
+BusServe	.	BusServe
+ResTech	.	ResTech
+EnvServ	.	EnvServ
+ResServ	.	ResServ
+Education	.	Education
+Health	.	Health
+RecEnt	.	RecEnt
+PubAdm	.	PubAdm
+/
+
+
+ieg(i) Electricity and Gas Sectors /
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+/
+
+keg(k) Electricity and Gas Commodities /
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+/
+
+
+
+alias (s,ss), (v,vv), (i,ii), (i,j), (j,jj), (r,rr), (k,kk), (f,ff), (fd,ffd), (inst,jinst) ;
+
+alias (g,gg), (h,hh) ;
+
+*## Calculate Imports by Origin
+
+
+*## Define and load the NEW 2012 China SAM
+
+parameter sam(s,ss) ;
+
+$onempty
+$include "Data/IO1242%EMPath%.dat"
+
+*# covert the value unit from 10 thousand yuan to billion yuan
+io12(iot,jot) = 1e-5*io12(iot,jot) ;
+
+*# Move trade to commodity accounts
+sam(r,k) = sum(iot$mapios(iot,k),io12("row",iot)) ;
+sam(k,r) = sum(iot$mapios(iot,k),io12(iot,"row")) ;
+
+*# Intermediate demand
+sam(k,i) = sum(jot$mapios(jot,k),sum(iot$mapios(iot,i),io12(jot,iot))) ;
+
+*# Value added
+sam(v,j) = sum(iot$mapios(iot,v),sum(jot$mapios(jot,j), io12(iot,jot))) ;
+
+*# Final Demand
+sam(k,"HHRural") = sum(jot$mapios(jot,k), io12(jot,"HHRural")) ;
+sam(k,"HHUrban") = sum(jot$mapios(jot,k), io12(jot,"HHUrban")) ;
+sam(k,"Capacct") = sum(jot$mapios(jot,k), io12(jot,"Capacct")+io12(jot,"Invent")) ;
+sam(k,"Govt") = sum(jot$mapios(jot,k), io12(jot,"Govt")) ;
+
+
+sam("capital",i) = sum(iot$mapios(iot,i),io12("capital",iot)+io12("depr",iot)) ;
+
+if(0,
+*# Impute Natural Resources and Land
+sam("land",inr) = .2*sam("capital",inr) ;
+sam("natr",inr) = .1*sam("capital",inr) ;
+sam("capital",inr) = .7*sam("capital",inr) ;
+sam("enterprise","land") = sum(inr,sam("land",inr)) ;
+sam("enterprise","natr") = sum(inr,sam("natr",inr)) ;
+) ;
+
+*# Other accounts
+*## Institutional accounts
+sam(inst,jinst) = sum(ioinst$mapinst(ioinst,inst), sum(joinst$mapinst(joinst,jinst),io12(ioinst,joinst))) ;
+
+sam("prodtax",i) = sum(iot$mapios(iot,i), io12("Prodtax",iot)) ;
+sam("govt","prodtax") = sum(i,sam("prodtax",i)) ;
+
+*== to be update
+*== allocation of labor income
+*sam("LabUn",j) = .5*sam("LabSk",j) ;
+*sam("LabSk",j) = .5*sam("LabSk",j) ;
+*sam(h,l) = sum(i,sam(l,i))/2 ;
+
+display sam ;
+
+
+parameter dif0(s) ;
+dif0(s)$sum(ss,sam(s,ss)) = sum(ss,sam(s,ss)-sam(ss,s))/sum(ss,sam(s,ss)) ;
+
+display sam, dif0 ;
+
+dif0(s) = sum(ss,sam(s,ss)-sam(ss,s)) ;
+
+display sam, dif0 ;
+
+*## Initialize border price trade valuations
+
+Parameter wtf_pe0(r,k) Base trade flows at pre FOB export price /
+/ ;
+wtf_pe0(r,k)$(sum(rr,sam(k,rr)) ne 0) = sam(k,r) ;
+
+Parameter wtf_wpe0(r,k) Base trade flows at FOB export price /
+/ ;
+wtf_wpe0(r,k) = sam(k,r) ;
+
+Parameter wtf_wpm0(r,k) Base trade flows at CIF import price /
+/ ;
+wtf_wpm0(r,k) = sam(r,k);
+
+Parameter wtf_pm0(r,k) Base trade flows at post CIF import price /
+/ ;
+wtf_pm0(r,k)$(sum(rr,sam(rr,k)) ne 0) = sam(r,k)  ;
+
+*## Initialize a variety of tax instruments
+
+Parameter patax0(k,j,g) Base taxes on intermediate consumption /
+/ ;
+patax0(k,j,g)$sam(k,j) = (sam("prodtax",j)*sam(g,"prodtax")/sum(gg,sam(gg,"prodtax")))*sam(k,j)/sum(kk,sam(kk,j)) ;
+
+Parameter vatax0(v,j,g) Base taxes on factors of production /
+/ ;
+
+vatax0(v,j,g)$sum(jj,sam(v,jj)) = sam(g,v)*sam(v,j)/sum(jj,sam(v,jj)) ;
+
+
+Parameter fdtax0(k,fd,g) Base taxes on final demand consumption /
+/ ;
+
+fdtax0(k,fd,g) = 0 ;
+
+
+*## Initialized miscellaneous exogenous data
+
+Parameter tk0 Base capital stock /
+        1.00E+3
+/ ;
+
+tk0 = sum(i,sam("capital",i))/.04 ;
+
+Parameter tpop0 Base population in millions /
+        1200.000
+/ ;
+
+Parameter popsh0(h) Base population shares /
+/ ;
+        popsh0(h) = 100 ;
+
+
+Parameter labvol0(i,l) Initial labor demand volumes ;
+labvol0(i,l)$sam(l,i) = sam(l,i) ;
+
+Parameter ppp0 Base PPP exchange rate /
+    1.00
+/ ;
+
+Parameter eta0(k,h) Base income elasticities /
+/ ;
+
+        eta0(food,h) = .5 ;
+        eta0(manufac,h) = 1.0 ;
+        eta0(services,h) = 1.5 ;
+
+
+scalar scale Scaling factor for initial data   / 1 / ;
+scalar pscale Scaling factor for labor volumes / 1 / ;
+*scalar pscale Scaling factor for labor volumes / .000001 / ;
+scalar escale Scaling factor for emissions /1 / ;
+
+sam(s,ss)    = scale*sam(s,ss) ;
+patax0(k,j,g)   = scale*patax0(k,j,g) ;
+vatax0(v,j,g)   = scale*vatax0(v,j,g) ;
+fdtax0(k,fd,g)  = scale*fdtax0(k,fd,g) ;
+tk0             = scale*tk0 ;
+wtf_pe0(r,k)  = scale*wtf_pe0(r,k) ;
+wtf_wpe0(r,k) = scale*wtf_wpe0(r,k) ;
+wtf_wpm0(r,k) = scale*wtf_wpm0(r,k) ;
+wtf_pm0(r,k)  = scale*wtf_pm0(r,k) ;
+labvol0(i,l)  = pscale*labvol0(i,l) ;
+
+*## Structural parameters for the new aggregation
+set ipar / sigmap,    sigmav,   sigmakl,   sigmaks,    sigmau,    sigmas,    sigmak,    sigmat / ;
+set kpar / sigmac,    sigmam,    sigmaw,    sigmax,    sigmaz,      etae / ;
+
+parameter KeySect(i,ipar) Key sectoral parameters ;
+keysect(i,ipar) = .3 ;
+KeySect(i,"sigmap") = .0 ;
+KeySect(i,"sigmav") = .3 ;
+KeySect(i,"sigmaks") = .25 ;
+keysect(i,"sigmav") = .75 ;
+
+parameter KeyComm(k,kpar) Key commodity parameters ;
+keycomm(k,kpar) = 4 ;
+keycomm(k,"sigmac") = 5.0 ;
+keycomm(k,"sigmam") = 2.0 ;
+keycomm(k,"etae")   = 5.0 ;
+*keycomm(k,"etae") = 1.1 ;
+KeyComm(k,"etae") = 3 ;
+
+*keycomm(kren,"sigmam") = 10.0 ;
+*keycomm(kren,"sigmaw") = 4.0 ;
+
+parameter Frisch(h) ;
+frisch(h) = -1.0 ;
+
+parameter sigmaf(f) Final demand expenditure elasticities /
+        govt            0
+        capacct         0
+   / ;
+
+scalar omegakt Capital mobility across types                 / 0 / ;
+omegakt = inf ;
+*omegakt = .2 ;
+
+parameter omegak(kt) Capital mobility across sectors ;
+omegak(kt) = inf ;
+*omegak(kt) = .3 ;
+
+scalar omegatl Land mobility across type of land             / 0.0 / ;
+parameter omegat(lt) Land mobility across sectors ;
+omegat(lt) = 0 ;
+
+set
+gz Geographic zone / Rur, Urb, Tot /
+
+gz2(gz) / Rur, Urb /
+
+mapg(i,gz2) Mapping of sectors to geographic zones
+;
+
+mapg(i,gz2) = yes ;
+
+
+parameter migr0(l) Base year migration ;
+migr0(l) = 0 ;
+
+migr0(l) = pscale*migr0(l) ;
+
+parameter glab0(l,gz) Base year labor supply growth rates ;
+
+glab0(l,gz) = .005 ;
+
+parameter omegal(l,gz)  Labor supply elasticities ;
+omegal(l,gz) = 1 ;
+**omegal(l,gz) = .5 ;
+
+parameter omegar(i) Sector specific factor supply elasticity ;
+omegar(i) = inf ;
+
+parameter omegam(l) Migration elasticity ;
+omegam(l) = inf ;
+*omegam("unskl") = 1 ;
+
+parameter lcsv Long CSV File /0/ ;
+parameter ifsam Output SAM in CSV and Excel formats /0/ ;
+
+$offempty
+
+* ----- Declare some additional subsets
+
+set
+ip(i) Sectors with endogenous labor productivity
+np(i) Sectors with exogenous labor productivity
+mg different types of margins / d, m, x /
+;
+
+* ----- Create aliases
+
+alias(s,ss) ;
+alias(i,j) ;
+alias(i,j) ;
+alias(h,hh) ;
+
+alias(k,kk) ;
+alias(k,kk) ;
+
+set
+ag(i) /
+AgFFF
+/
+
+manu(i) /
+Coal
+OilGas
+MetMin
+NMetMin
+FoodPr
+Textile
+Apparel
+WoodPr
+PaperPr
+RefPet
+Chemical
+NMetPr
+Metals
+MetalPr
+GenEqp
+SpecEqp
+TransEqp
+ElecEqp
+ICTEqp
+PrecInst
+OthMfg
+Waste
+MachRep
+ /
+
+srv(i) /
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+WatDist
+Constr
+WhRetTr
+TranspSrv
+HotRest
+ICTServ
+Finance
+RealEst
+BusServe
+ResTech
+EnvServ
+ResServ
+Education
+Health
+RecEnt
+PubAdm
+/ ;
+
+manu(i) = not(ag(i)+srv(i)) ;
+*display$ivb ag, manu, srv ;
+parameter chil(i,v) sector and skill specific shift parameters ;
+chil(manu,l) = 0.02 ;
+
+set itrans(i)
+/
+TranspSrv
+/
+
+intrans(i)
+;
+intrans(i) = not itrans(i) ;
+alias (itrans,jtrans) ;
+
+set
+ier(i) Residual industrial emissions sectors /
+TranspSrv
+/
+
+ielect(i) / T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+/
+igas(i) / GasDist /
+ioil(i) /RefPet/
+kelect(k) /T_D/
+kgas(k) /GasDist/
+koil(k) /RefPet/
+ielec0(i) /T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+/
+igas0(i) /GasDist/
+ioil0(i) /RefPet/
+kelec0(k) /T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+/
+kgas0(k) /GasDist/
+koil0(k) /RefPet/
+;
+
+alias (ier,jer) ;
+
+set src / gen, veh, res / ;
+
+parameter hnum(h) households in millions ;
+hnum(h) = 100 ;
+$ontext
+/
+HOUS1                    1.22
+HOUS2                    2.36
+HOUS3 1
+HOUS4                    1.65
+HOUS5 1
+HOUS6                    2.11
+HOUS7 1
+HOUS8                    1.65
+HOUS9                    3.14
+/ ;
+$offtext
+
+set
+econ(k) energy commodities /
+RefPet
+T_D
+Coal_Power
+Oil_Power
+Gas_Power
+Nuclear
+Hydro
+Wind
+Solar
+Biomass
+
+GasDist
+/
+
+rveh(k) vehicle commodities /
+TransEqp
+/ ;

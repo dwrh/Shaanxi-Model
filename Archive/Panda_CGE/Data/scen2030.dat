@@ -1,0 +1,135 @@
+* --
+* -- PANDA - PRC Aggregate National Development Assessment Model
+* --
+* --           All rights reserved
+* -- 
+* --           David Roland-Holst, Samuel G. Evans
+* --           Cecilia Han Springer, and MU Yaqian
+* --
+* --           Berkeley Energy and Resources, BEAR LLC
+* --           1442A Walnut Street, Suite 108
+* --           Berkeley, CA 94705 USA
+* --           
+* --           Email: dwrh@berkeley.edu
+* --           Tel: 510-220-4567
+* --           Fax: 510-524-4591
+* --      
+* --           October, 2016
+
+* --
+
+* -- Exogenous growth rates for selected variables
+* -- All rates expressed in integer percent
+
+* ----- Define the time scope
+
+set   
+t Time /2012*2030 /
+;
+
+alias (t,tt) ;
+
+parameter year (t) ;
+year(t) = 2011 + ord(t) ;
+display year ;
+
+set tr(t) ;
+
+if (1,
+tr(t) = yes ;
+else
+tr(t)$(mod(year(t),5) eq 0) = yes ;
+) ;
+
+parameter step (t) ;
+
+step(t) = 1 ;
+
+
+Table Scen(t,*) Exogenous growth scenario
+
+        GDP   grlab  Pop    depr   LandR   NatR   Margin  AgProd GGDP2 
+2012   8.4890 .838  1.19   4.000   0.000   0.000   0.000   2.000 4.07
+2013   8.4890 .838  1.19   4.000   0.000   0.000   0.000   2.000 4.07
+2014   7.4280 .867
+2015   7.0000 .129
+2016   6.7000 .044
+   ;
+
+*scen(t,"gdp") = 5 ;
+scen(t,"gdp")$(year(t) gt 2016) = 6.5 ;
+scen(t,"pop") = 1.19 ;
+scen(t,"depr") = 5 ;
+scen(t,"agprod") = 2 ;
+
+*## China DOF Projected Population Growth 
+Parameter prcpop(t) /
+
+2012	0.819
+2013	0.819
+2014	0.813
+2015	0.806
+2016	0.886
+2017	0.878
+2018	0.870
+2019	0.863
+2020	0.855
+2021	0.864
+2022	0.856
+2023	0.849
+2024	0.842
+2025	0.835
+2026	0.808
+2027	0.802
+2028	0.795
+2029	0.789
+2030	0.783
+/
+;
+
+scen(t,"pop") = prcpop(t) ;
+
+parameter lScen(t,l) Exogenous growth scenario ;
+$ontext
+      sklllab unsklab
+2012  1.871   1.871  
+2013  1.871   1.871  
+2014  1.779   1.779  
+2015  1.691   1.691  
+2016  1.608   1.608  
+2017  1.608   1.608  
+2018  1.608   1.608  
+2019  1.608   1.608  
+2020  1.608   1.608  
+   ;
+$Offtext
+
+scen(t,"grlab") = scen(t,"pop") ;
+
+lscen(t,l) = scen(t,"grlab") ;
+lscen(t,l)$(year(t) gt 2020) = scen("2020","grlab") ;
+
+table ghginv(*,t) greenhouse gas emissions inventory
+
+          2012
+
+Trans     171
+Ind       100.7
+Elec      95.3
+Agr       37.9
+Res       31.6
+Com       22
+Other     0.2
+Total     458.7
+;
+
+parameter ghg2020 carb target for 2020 emissions /427/ ;
+
+parameter chilT(i,v,t) ;
+
+parameter glT(t) Labor productivity growth ;
+parameter mueT(t,ef) Aggregate emission efficiency ;
+
+manu(i) = not(ag(i)+srv(i)) ;
+display$ivb ag, manu, srv ;
+chil(manu,l) = 0.0 ;

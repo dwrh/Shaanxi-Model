@@ -1,0 +1,1352 @@
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 02/09/17 18:42:20 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  * --
+   2  * -- PANDA - PRC Aggregate National Development Assessment Model
+   3  * --
+   4  * --           All rights reserved
+   5  * --
+   6  * --           David Roland-Holst, Samuel G. Evans
+   7  * --           Cecilia Han Springer, and MU Yaqian
+   8  * --
+   9  * --           Berkeley Energy and Resources, BEAR LLC
+  10  * --           1442A Walnut Street, Suite 108
+  11  * --           Berkeley, CA 94705 USA
+  12  * --
+  13  * --           Email: dwrh@berkeley.edu
+  14  * --           Tel: 510-220-4567
+  15  * --           Fax: 510-524-4591
+  16  * --
+  17  * --           October, 2016
+  18   
+  19  * --
+  20   
+  21  * ------------------------------------------------------------------------
+      ------
+  22  *
+  23  * Define model equations
+  24  *
+  25  * ------------------------------------------------------------------------
+      ------
+  26   
+  27  * ----- Production block
+  28   
+  29  * ----- Top level nest
+  30   
+  31  * ----- Equation (P-1)
+  32   
+  33  ndeq(i)..
+****     $140,120
+  34     nd(i)*pnd(i)**sigmap(i) =e= and(i)*xp(i)*px(i)**sigmap(i) ;
+****      $140   $140       $140       $140  $140  $140
+  35   
+  36  * ----- Equation (P-2)
+  37   
+  38  vaeq(i)$(va0(i) ne 0)..
+****     $140    $140
+  39     va(i)*pva(i)**sigmap(i) =e= ava(i)*xp(i)*px(i)**sigmap(i) ;
+****      $140   $140                  $140
+  40   
+  41  va.fx(i)$(va0(i) eq 0) = 0 ;
+  42   
+  43  * ----- Equation (P-3)
+  44   
+  45  pxeq(i)..
+****     $140
+  46  *   (px(i)+rac("co2",i)*sum(j,tfr(j)*pr(j)*rd(j)/(1+tfr(j))/xp(i))$ifrr)**
+      (1-sigmap(i)) =e= and(i)*pnd(i)**(1-sigmap(i)) + ava(i)*pva(i)**(1-sigmap(
+      i)) ;
+  47     px(i)**(1-sigmap(i)) =e= and(i)*pnd(i)**(1-sigmap(i)) + ava(i)*pva(i)**
+      (1-sigmap(i)) ;
+  48   
+  49  * ----- Equation (P-4)
+  50   
+  51  ppeq(i)..
+****     $140
+  52      pp(i) =e= (1+sum(g,tp(i,g)))*px(i) ;
+****       $140            $120,140
+  53  *   pp(i) =e= (1+tp(i)+sum(ef,tef(ef,i)*efi(ef,i))/xp(i))*px(i) ;
+  54   
+  55  tpeq(i,g)..
+****     $140
+  56     tp(i,g) =e= tp0(i,g) ;
+****                   $140
+  57  *   tp(i) =e= tp0(i) - (recycle*ry*(rd(i)/sum(ii,rd(i)))/(px(i)*xp(i)))$xp
+      0(i) ;
+  58   
+  59  * ----- Second level nests
+  60   
+  61  * ----- Equation (P-5)
+  62   
+  63  xapeq(k,j)$(xap0(k,j) ne 0)..
+****      $140,120,120,140
+  64     xap(k,j) =e= a(k,j)*nd(j) ;
+****       $140       $140
+  65   
+  66  xap.fx(k,j)$(xap0(k,j) eq 0) = 0 ;
+  67   
+  68  * ----- Equation (P-6)
+  69   
+  70  pndeq(j)..
+****      $140
+  71     pnd(j) =e= sum(k,a(k,j)*(1+sum(g,tcp(k,j,g)))*pa(k)) ;
+****                                        $140        $140
+  72   
+  73  * ----- Equation (P-7)
+  74   
+  75  kleq(i)$(kl0(i) ne 0)..
+****     $140    $140
+  76     kl(i)*pkl(i)**sigmav(i) =e= akl(i)*va(i)*(pva(i)**sigmav(i)) ;
+****      $140   $140       $140       $140
+  77   
+  78  kl.fx(i)$(kl0(i) eq 0) = 0 ;
+  79   
+  80  * ----- Equation (P-8)
+  81   
+  82  ttdeq(i)$(att(i) ne 0)..
+****      $140    $140
+  83     ttd(i)*pttd(i)**sigmav(i) =e= att(i)*va(i)*(pva(i)**sigmav(i)) ;
+****       $140    $140
+  84   
+  85  ttd.fx(i)$(att(i) eq 0) = 0 ;
+  86   
+  87  * ----- Equation (P-9)
+  88   
+  89  rdeq(i)$(rd0(i) ne 0)..
+****     $140    $140
+  90  *   lambdar(i)*rd(i)*(pr(i)*(1+tfr(i)))**sigmav(i) =e= ar(i)*va(i)*(lambda
+      r(i)*pva(i))**sigmav(i) ;
+  91     lambdar(i)*rd(i)*pr(i)**sigmav(i) =e= ars(i)*va(i)*(lambdar(i)*pva(i))*
+****           $140  $140  $140                  $140
+      *sigmav(i) ;
+  92   
+  93  rd.fx(i)$(rd0(i) eq 0) = 0 ;
+  94   
+  95  * ----- Equation (P-10)
+  96   
+  97  pvaeq(i)$(va0(i) ne 0)..
+****      $140
+  98     pva(i)**(1-sigmav(i)) =e= akl(i)*pkl(i)**(1-sigmav(i))
+  99                            +  ars(i)*pr(i)**(1-sigmav(i))
+ 100  *                          +  ar(i)*(pr(i)/lambdar(i))**(1-sigmav(i))
+ 101                            +  att(i)*pttd(i)**(1-sigmav(i)) ;
+ 102   
+ 103  pva.fx(i)$(va0(i) eq 0) = 1 ;
+ 104   
+ 105  * ----- Third level nest
+ 106   
+ 107  * ----- Equation (P-11)
+ 108   
+ 109  uskeq(i)$(au(i) ne 0)..
+****      $140   $140
+ 110     usk(i)*pusk(i)**sigmakl(i) =e= au(i)*kl(i)*pkl(i)**sigmakl(i) ;
+****       $140    $140        $140
+ 111   
+ 112  usk.fx(i)$(au(i) eq 0) = 0 ;
+ 113   
+ 114  * ----- Equation (P-12)
+ 115   
+ 116  kskeq(i)$(aksk(i) ne 0)..
+****      $140     $140
+ 117     ksk(i)*pksk(i)**sigmakl(i) =e= aksk(i)*kl(i)*pkl(i)**sigmakl(i) ;
+****       $140    $140
+ 118   
+ 119  ksk.fx(i)$(aksk(i) eq 0) = 0 ;
+ 120   
+ 121  * ----- Equation (P-13)
+ 122   
+ 123  pkleq(i)$(kl0(i) ne 0)..
+****      $140
+ 124     pkl(i)**(1-sigmakl(i)) =e= au(i)*pusk(i)**(1-sigmakl(i)) + aksk(i)*pksk
+      (i)**(1-sigmakl(i)) ;
+ 125   
+ 126  pkl.fx(i)$(kl0(i) eq 0) = 1 ;
+ 127   
+ 128  * ----- Fourth level nest
+ 129   
+ 130  * ----- Equation (P-14)
+ 131   
+ 132  skleq(i)$(as(i) ne 0)..
+****      $140   $140
+ 133     skl(i)*pskl(i)**sigmaks(i) =e= as(i)*ksk(i)*pksk(i)**sigmaks(i) ;
+****       $140    $140        $140
+ 134   
+ 135  skl.fx(i)$(as(i) eq 0) = 0 ;
+ 136   
+ 137  * ----- Equation (P-15)
+ 138   
+ 139  ktdeq(i)$(akt(i) ne 0)..
+****      $140    $140
+ 140     ktd(i)*pktd(i)**sigmaks(i) =e= akt(i)*ksk(i)*pksk(i)**sigmaks(i) ;
+****       $140    $140
+ 141   
+ 142  ktd.fx(i)$(akt(i) eq 0) = 0 ;
+ 143   
+ 144  * ----- Equation (P-16)
+ 145   
+ 146  pkskeq(i)$(ksk0(i) ne 0)..
+****       $140     $140
+ 147     pksk(i)**(1-sigmaks(i)) =e= as(i)*pskl(i)**(1-sigmaks(i)) + akt(i)*pktd
+      (i)**(1-sigmaks(i)) ;
+ 148   
+ 149  pksk.fx(i)$(ksk0(i) eq 0) = 1 ;
+ 150   
+ 151  * ----- Decomposition of labor demand
+ 152   
+ 153  * ----- Equation (P-17)
+ 154   
+ 155  ldeq1(i,ul)$(al(i,ul) ne 0)..
+****      $140 $120 $140
+ 156     lambdal(i,ul)*ld(i,ul)*wage(i,ul)**sigmau(i) =e=
+****           $140     $140       $140          $140
+ 157        al(i,ul)*usk(i)*(pusk(i)*lambdal(i,ul))**sigmau(i) ;
+ 158   
+ 159  * ----- Equation (P-18)
+ 160   
+ 161  ldeq2(i,sl)$(al(i,sl) ne 0)..
+****      $140 $120
+ 162     lambdal(i,sl)*ld(i,sl)*wage(i,sl)**sigmas(i) =e=
+****                                             $140
+ 163        al(i,sl)*skl(i)*(pskl(i)*lambdal(i,sl))**sigmas(i) ;
+ 164   
+ 165  ld.fx(i,l)$(al(i,l) eq 0) = 0 ;
+****          $120
+ 166   
+ 167  * ----- Equation (P-19)
+ 168   
+ 169  puskeq(i)$(usk0(i) ne 0)..
+****       $140     $140
+ 170     pusk(i)**(1-sigmau(i)) =e= sum(ul, al(i,ul)*(wage(i,ul)/lambdal(i,ul))*
+      *(1-sigmau(i))) ;
+ 171   
+ 172  * ----- Equation (P-20)
+ 173   
+ 174  pskleq(i)$(skl0(i) ne 0)..
+****       $140     $140
+ 175     pskl(i)**(1-sigmas(i)) =e= sum(sl, al(i,sl)*(wage(i,sl)/lambdal(i,sl))*
+      *(1-sigmas(i))) ;
+ 176   
+ 177  pusk.fx(i)$(usk0(i) eq 0) = 1 ;
+ 178  pskl.fx(i)$(skl0(i) eq 0) = 1 ;
+ 179   
+ 180  * ----- Decompose capital bundle
+ 181   
+ 182  * ----- Equation (P-21)
+ 183   
+ 184  kdeq(i,kt)$(ak(i,kt) ne 0)..
+****     $140 $120 $140
+ 185     lambdak(i,kt)*kd(i,kt)*rent(i,kt)**sigmak(i) =e= ak(i,kt)*ktd(i)*(pktd(
+****           $140     $140       $140          $140
+      i)*lambdak(i,kt))**sigmak(i) ;
+ 186   
+ 187  kd.fx(i,kt)$(ak(i,kt) eq 0) = 0 ;
+ 188   
+ 189  * ----- Equation (P-22)
+ 190   
+ 191  pktdeq(i)$(akt(i) ne 0)..
+****       $140
+ 192     pktd(i)**(1-sigmak(i)) =e= sum(kt,ak(i,kt)*(rent(i,kt)/lambdak(i,kt))**
+      (1-sigmak(i))) ;
+ 193   
+ 194  pktd.fx(i)$(akt(i) eq 0) = 1 ;
+ 195   
+ 196  * Decompose the land bundle
+ 197   
+ 198  * ----- Equation (P-23)
+ 199   
+ 200  tdeq(i,lt)$(at(i,lt) ne 0)..
+****     $140 $120 $140
+ 201     lambdat(i,lt)*td(i,lt)*pt(i,lt)**sigmat(i) =e= at(i,lt)*ttd(i)*(lambdat
+****           $140     $140     $140          $140
+      (i,lt)*pttd(i))**sigmat(i) ;
+ 202   
+ 203  td.fx(i,lt)$(at(i,lt) eq 0) = 0 ;
+ 204   
+ 205  * ----- Equation (P-24)
+ 206   
+ 207  pttdeq(i)$(att(i) ne 0)..
+****       $140
+ 208     pttd(i)**(1-sigmat(i)) =e= sum(lt,at(i,lt)*(pt(i,lt)/lambdat(i,lt))**(1
+      -sigmat(i))) ;
+ 209   
+ 210  pttd.fx(i)$(att(i) eq 0) = 0 ;
+ 211   
+ 212  * ----- Aggregation into commodities
+ 213   
+ 214  * ----- Equation (P-25)
+ 215   
+ 216  xpeq1(i,k)$(mapik(i,k) and sigmac(k) ne inf)..
+****      $140        $140            $140
+ 217   
+ 218     xp(i)*pp(i)**sigmac(k) =e= ac(i,k)*x(k)*p(k)**sigmac(k) ;
+****                                 $140   $140 $140
+ 219   
+ 220  xpeq2(i,k)$(mapik(i,k) and sigmac(k) eq inf)..
+****      $140
+ 221     pp(i) =e= p(k) ;
+ 222   
+ 223  * ----- Equation (P-26)
+ 224   
+ 225  peq1(k)$(sigmac(k) ne inf and x0(k) ne 0)..
+****     $140                        $140
+ 226     p(k)**(1-sigmac(k)) =e= sum(i$mapik(i,k),ac(i,k)*pp(i)**(1-sigmac(k))) 
+      ;
+ 227   
+ 228  peq2(k)$(sigmac(k) eq inf and x0(k) ne 0)..
+****     $140
+ 229     x(k) =e= sum(i$mapik(i,k),xp(i)) ;
+ 230   
+ 231  p.fx(k)$(x0(k) eq 0) = 1 ;
+ 232   
+ 233  * ----- Income distribution
+ 234   
+ 235  * ----- Aggregate factor incomes net of factor taxes
+ 236   
+ 237  * ----- Equation (Y-1)
+ 238   
+ 239  lyeq(l)..
+****     $140
+ 240     ly(l) =e= sum(i,wage(i,l)*ld(i,l)/(1+sum(g,tfl(i,l,g))))  + plev*sum(g,
+****      $140                                        $140              $140    
+      gtrl(l,g));
+         $140
+ 241   
+ 242  * ----- Equation (Y-2)
+ 243   
+ 244  kyeq(kt)..
+****     $140
+ 245     ky(kt) =e= sum(i,rent(i,kt)*kd(i,kt)/(1+sum(g,tfk(i,kt,g))))  + plev*su
+****      $140                                           $140                   
+      m(g,gtrk(kt,g));
+             $140
+ 246   
+ 247  * ----- Equation (Y-3)
+ 248   
+ 249  tyeq(lt)$(ty0(lt) ne 0)..
+****     $140     $140
+ 250     ty(lt) =e= sum(i,pt(i,lt)*td(i,lt)/(1+sum(g,tft(i,lt,g)))) ;
+****      $140                                         $140
+ 251   
+ 252  ty.fx(lt)$(ty0(lt) eq 0) = 0 ;
+ 253   
+ 254  * ----- Equation (Y-4)
+ 255   
+ 256  ryeq$(ry0 ne 0)..
+****     $140 $140
+ 257     ry =e= sum(i,pr(i)*rd(i)) ;
+****      $140
+ 258  *   ry =e= sum(i,pr(i)*rd(i)/(1+tfr(i)-sfr(i)))- sum(icap,poff*offset(icap
+      ));
+ 259   
+ 260  ry.fx$(ry0 eq 0) = 0 ;
+ 261   
+ 262  * ----- Distribution of capital income
+ 263   
+ 264  * ----- Equation (Y-5)
+ 265   
+ 266  ktreeq(kt)$(ktre0(kt) ne 0)..
+****       $140       $140
+ 267     ktre(kt) =e= xket(kt)*ky(kt) ;
+****        $140         $140
+ 268   
+ 269  ktre.fx(kt)$(ktre0(kt) eq 0) = 0 ;
+ 270   
+ 271  * ----- Equation (Y-6)
+ 272   
+ 273  ktrheq(kt)$(ktrh0(kt) ne 0)..
+****       $140       $140
+ 274     ktrh(kt) =e= xkht(kt)*ky(kt) ;
+****        $140         $140
+ 275   
+ 276  ktrh.fx(kt)$(ktrh0(kt) eq 0) = 0 ;
+ 277   
+ 278  * ----- Equation (Y-7)
+ 279   
+ 280  ktrweq(kt,r)$(ktrw0(kt,r) ne 0)..
+****       $140 $120    $140
+ 281     ktrw(kt,r) =e= xkwt(kt,r)*ky(kt) ;
+****        $140           $140
+ 282   
+ 283  ktrw.fx(kt,r)$(ktrw0(kt,r) eq 0) = 0 ;
+ 284   
+ 285  * ----- Distribution of corporate income
+ 286   
+ 287  * ----- Equation (Y-8)
+ 288   
+ 289  cyeq(e)$(cy0(e) ne 0)..
+****     $140,120$140
+ 290     cy(e) =e= sum(kt,xke(kt,e)*ktre(kt)) ;
+****      $140              $140
+ 291   
+ 292  cy.fx(e)$(cy0(e) eq 0) = 0 ;
+ 293   
+ 294  * ----- Equation (Y-9)
+ 295   
+ 296  savceq(e)$(savc0(e) ne 0)..
+****       $140      $140
+ 297     savc(e) =e= csavrate(e)*((1-sum(g,kappac(e,g)))*cy(e)) ;
+****        $140            $140                $140
+ 298   
+ 299  savc.fx(e)$(savc0(e) eq 0) = 0 ;
+ 300   
+ 301  * ----- Equation (Y-10)
+ 302   
+ 303  ctrheq(e)$(ctrh0(e) ne 0)..
+****       $140      $140
+ 304     ctrh(e) =e= xcht(e)*((1-sum(g,kappac(e,g)))*cy(e)) ;
+****        $140        $140
+ 305   
+ 306  ctrh.fx(e)$(ctrh0(e) eq 0) = 0 ;
+ 307   
+ 308  * ----- Equation (Y-11)
+ 309   
+ 310  ctrweq(e,r)$(ctrw0(e,r) ne 0)..
+****       $140        $140
+ 311     ctrw(e,r) =e= xcwt(e,r)*((1-sum(g,kappac(e,g)))*cy(e)) ;
+****        $140          $140
+ 312   
+ 313  ctrw.fx(e,r)$(ctrw0(e,r) eq 0) = 0 ;
+ 314   
+ 315  * ----- Household income
+ 316   
+ 317  * ----- Equation (Y-12)
+ 318   
+ 319  yheq(h)..
+****     $140,120
+ 320     yh(h) =e= sum(l,xlh(h,l)*ly(l)) + sum(kt,xkh(kt,h)*ktrh(kt)) + sum(e,xc
+****      $140             $140                     $140                        
+      h(e,h)*ctrh(e))
+      $140
+ 321                  +  sum(lt,xth(lt,h)*ty(lt)) + plev*sum(g,gtrh(h,g)) + sum(
+****                              $140                            $140          
+      hh,htrh(h,hh))
+       $120 $140
+ 322                                  + sum(r,er(r)*wtrh(h,r)) + atrh(h)*rsc*ry 
+****                                           $140    $140         $140   $140
+      ;
+ 323  *   yh(h) =e= sum(l,xlh(h,l)*ly(l)) + xrh(h)*ry + sum(kt,xkh(kt,h)*ktrh(kt
+      )) + sum(e,xch(e,h)*ctrh(e))
+ 324  *          +  sum(lt,xth(lt,h)*ty(lt)) + plev*(gtrh(h)+atrh(h)*ry*rsc) + s
+      um(hh,htrh(h,hh)) + er(r)*wtrh(h) ;
+ 325   
+ 326  * ----- Equation (Y-13)
+ 327   
+ 328  ydeq(h)..
+****     $140
+ 329     yd(h) =e= (1-sum(g,taxadjh(g)*kappah(h,g)))*yh(h) - htr(h) ;
+****      $140                    $140      $140               $140
+ 330   
+ 331  * ----- Equation (Y-14)
+ 332   
+ 333  htreq(h)$(ahtr(h) ne 0)..
+****      $140     $140
+ 334     htr(h) =e= ahtr(h)*(1-sum(g,taxadjh(g)*kappah(h,g)))*yh(h) ;
+ 335   
+ 336  htr.fx(h)$(ahtr(h) eq 0) = 0 ;
+ 337   
+ 338  * ----- Equation (Y-15)
+ 339   
+ 340  htrheq(h,hh)$(ahtrh(h,hh) ne 0)..
+****       $140         $140
+ 341     htrh(h,hh) =e= ahtrh(h,hh)*htr(hh) ;
+ 342   
+ 343  htrh.fx(h,hh)$(ahtrh(h,hh) eq 0) = 0 ;
+ 344   
+ 345  * ----- Equation (Y-16)
+ 346   
+ 347  htrweq(h,r)$(ahtrw(h,r) ne 0)..
+****       $140        $140
+ 348     htrw(h,r) =e= ahtrw(h,r)*htr(h) ;
+****        $140
+ 349   
+ 350  htrw.fx(h,r)$(ahtrw(h,r) eq 0) = 0 ;
+ 351   
+ 352  * ----- Demand block
+ 353   
+ 354  * ----- Household demand
+ 355   
+ 356  * ----- Equation (D-1)
+ 357   
+ 358  xaceq(k,h)$(mu0(k,h) ne 0)..
+****      $140      $140
+ 359     xac(k,h)*(1+sum(g,tcc(k,h,g)))*pa(k) =e= (1+sum(g,tcc(k,h,g)))*pa(k)*th
+****       $140              $140                                               
+      eta(k,h)*pop(h) + mu(k,h)*(yd(h)*(1-asav(h))
+        $140     $140    $140                $140
+ 360                                  -   pop(h)*sum(kk,(1+sum(g,tcc(kk,h,g)))*p
+****                                                  $120
+      a(kk)*theta(kk,h))) ;
+ 361   
+ 362  xac.fx(k,h)$(mu0(k,h) eq 0) = 0 ;
+ 363   
+ 364  * ----- Equation (D-2)
+ 365   
+ 366  savheq(h)..
+****       $140
+ 367     savh(h) =e= yd(h) - sum(k,(1+sum(g,tcc(k,h,g)))*pa(k)*xac(k,h)) ;
+****        $140
+ 368   
+ 369  * ----- Equation (D-3)
+ 370   
+ 371  cpieq(h)..
+****      $140
+ 372     cpi(h)*sum(k,(1+sum(g,tcc0(k,h,g)))*pa0(k)*xac0(k,h)) =e= sum(k,(1+sum(
+****       $140                   $140         $140    $140
+      g,tcc(k,h,g)))*pa(k)*xac0(k,h)) ;
+ 373   
+ 374  fpieq(h)..
+****      $140
+ 375     fpi(h)*sum(food,(1+sum(g,tcc0(food,h,g)))*pa0(food)*xac0(food,h)) =e= s
+****       $140        $120
+      um(food,(1+sum(g,tcc(food,h,g)))*pa(food)*xac0(food,h)) ;
+ 376   
+ 377  epieq(h)..
+****      $140
+ 378     epi(h)*sum(erg,(1+sum(g,tcc0(erg,h,g)))*pa0(erg)*xac0(erg,h))
+****       $140       $120
+ 379          =e= sum(erg,(1+sum(g,tcc(erg,h,g)))*pa(erg)*xac0(erg,h)) ;
+ 380   
+ 381  eexpeq(k,h)$(eexp0(k,h) ne 0)..
+****       $140        $140
+ 382     eexp(k,h) =e= pa(k)*xac(k,h) ;
+****        $140
+ 383   
+ 384  eexp.fx(k,h)$(eexp0(k,h) eq 0) = 0 ;
+ 385   
+ 386  * ----- Other final demand
+ 387   
+ 388  * ----- Equation (D-4)
+ 389   
+ 390  xafeq(k,f)$(af(k,f) ne 0)..
+****      $140$120 $140
+ 391     xaf(k,f)*((1+sum(g,tcf(k,f,g)))*pa(k))**sigmaf(f) =e= af(k,f)*xf(f)*pf(
+****       $140               $140                    $140              $140  $1
+      f)**sigmaf(f) ;
+      40
+ 392   
+ 393  xaf.fx(k,f)$(af(k,f) eq 0) = 0 ;
+ 394   
+ 395  * ----- Equation (D-5)
+ 396   
+ 397  pfeq(f)$(xf0(f) ne 0)..
+****     $140    $140
+ 398     pf(f)**(1-sigmaf(f)) =e= sum(k,af(k,f)*((1+sum(g,tcf(k,f,g)))*pa(k))**(
+      1-sigmaf(f))) ;
+ 399   
+ 400  pf.fx(f)$(xf0(f) eq 0) = 1 ;
+ 401   
+ 402  * ----- Equation (D-6)
+ 403   
+ 404  yfeq(f)$(xf0(f) ne 0)..
+****     $140
+ 405     yf(f) =e= pf(f)*xf(f) ;
+****      $140
+ 406   
+ 407  yf.fx(f)$(xf0(f) eq 0) = 0 ;
+ 408  xf.fx(f)$(xf0(f) eq 0) = 0 ;
+ 409   
+ 410  * ----- Trade block
+ 411   
+ 412  * ----- Armington system
+ 413   
+ 414  * ----- Equation (T-1)
+ 415   
+ 416  xaeq(k)..
+****     $140
+ 417     xa(k) =e= sum(j,xap(k,j)) + sum(h,xac(k,h)) + sum(f,xaf(k,f)) + sum(kk,
+****      $140                                                                  
+       sum(mg, xamg(k,kk,mg))) ;
+            $120  $140
+ 418  *             + sum(ef,dab(ef,k)) ;
+ 419   
+ 420  * ----- Equation (T-2)
+ 421   
+ 422  xddeq(k)$(xdd0(k) ne 0)..
+****      $140     $140
+ 423     xdd(k)*(pd(k)*(1+tmg(k,"d")))**sigmam(k) =e= ad(k)*xa(k)*pa(k)**sigmam(
+****       $140   $140      $140             $140      $140
+      k) ;
+ 424   
+ 425  xdd.fx(k)$(xdd0(k) eq 0) = 0 ;
+ 426   
+ 427  * ----- Equation (T-3)
+ 428   
+ 429  xmteq(k)$(xmt0(k) ne 0)..
+****      $140     $140
+ 430     xmt(k)*pmt(k)**sigmam(k) =e= am(k)*xa(k)*pa(k)**sigmam(k) ;
+****       $140   $140                 $140
+ 431   
+ 432  xmt.fx(k)$(xmt0(k) eq 0) = 0 ;
+ 433   
+ 434  * ----- Equation (T-4)
+ 435   
+ 436  paeq(k)..
+****     $140
+ 437     pa(k)**(1-sigmam(k)) =e= ad(k)*(pd(k)*(1+tmg(k,"d")))**(1-sigmam(k))
+ 438                           +  am(k)*(pmt(k)**(1-sigmam(k))) ;
+ 439   
+ 440  * ----- Equation (T-5)
+ 441   
+ 442  pmeq(k,r)$(xm0(k,r) ne 0)..
+****     $140      $140
+ 443     pm(k,r) =e= er(r)*wpm(k,r)*(1+sum(g,tmadj(g)*tm(k,r,g))) ;
+****      $140               $140                $140  $140
+ 444   
+ 445  pm.fx(k,r)$(xm0(k,r) eq 0) = 1 ;
+ 446   
+ 447  * ----- Equation (T-6)
+ 448   
+ 449  xmeq(k,r)$(xm0(k,r) ne 0)..
+****     $140
+ 450     xm(k,r)*((1+tmg(k,"m"))*pm(k,r))**sigmaw(k) =e= aw(k,r)*xmt(k)*pmt(k)**
+****      $140                                  $140      $140
+      sigmaw(k) ;
+ 451   
+ 452  xm.fx(k,r)$(xm0(k,r) eq 0) = 0 ;
+ 453   
+ 454  * ----- Equation (T-7)
+ 455   
+ 456  pmteq(k)$(xmt0(k) ne 0) ..
+****      $140
+ 457     pmt(k)**(1-sigmaw(k)) =e= sum(r,aw(k,r)*((1+tmg(k,"m"))*pm(k,r))**(1-si
+      gmaw(k))) ;
+ 458   
+ 459  pmt.fx(k)$(xmt0(k) eq 0) = 1 ;
+ 460   
+ 461  * ----- CET system
+ 462   
+ 463  * ----- Equation (T-8)
+ 464   
+ 465  peeq(k,r)$(xe0(k,r) ne 0)..
+****     $140      $140
+ 466     pe(k,r)*(1+tmg(k,"x"))*(1+sum(g,te(k,r,g))) =e= er(r)*wpe(k,r) ;
+****      $140                            $140                   $140
+ 467   
+ 468  pe.fx(k,r)$(xe0(k,r) eq 0) = 1 ;
+ 469   
+ 470  * ----- Equation (T-9)
+ 471   
+ 472  xdseq1(k)$(sigmax(k) ne inf and xds0(k) ne 0)..
+****       $140       $140               $140
+ 473     xds(k)*p(k)**sigmax(k) =e= gd(k)*x(k)*pd(k)**sigmax(k) ;
+****       $140                      $140
+ 474   
+ 475  xdseq2(k)$(sigmax(k) eq inf and xds0(k) ne 0)..
+****       $140
+ 476     pd(k) =e= p(k) ;
+ 477   
+ 478  xds.fx(k)$(xds0(k) eq 0) = 0 ;
+ 479   
+ 480  * ----- Equation (T-10)
+ 481   
+ 482  xeteq1(k)$(sigmax(k) ne inf and xet0(k) ne 0)..
+****       $140                          $140
+ 483     xet(k)*p(k)**sigmax(k) =e= ge(k)*x(k)*pet(k)**sigmax(k) ;
+****       $140                      $140        $140
+ 484   
+ 485  xeteq2(k)$(sigmax(k) eq inf and xet0(k) ne 0)..
+****       $140
+ 486     pet(k) =e= p(k) ;
+ 487   
+ 488  xet.fx(k)$(xet0(k) eq 0) = 0 ;
+ 489   
+ 490  * ----- Equation (T-11)
+ 491   
+ 492  xeq1(k)$(sigmax(k) ne inf and x0(k) ne 0)..
+****     $140
+ 493     p(k)**(1+sigmax(k)) =e= gd(k)*pd(k)**(1+sigmax(k)) + ge(k)*pet(k)**(1+s
+      igmax(k)) ;
+ 494   
+ 495  xeq2(k)$(sigmax(k) eq inf and x0(k) ne 0)..
+****     $140
+ 496     x(k) =e= xds(k) + xet(k) ;
+ 497   
+ 498  x.fx(k)$(x0(k) eq 0) = 0 ;
+ 499   
+ 500  * ----- Equation (T-12)
+ 501   
+ 502  xeeq1(k,r)$(sigmaz(k) ne inf and xe0(k,r) ne 0)..
+****      $140         $140
+ 503     xe(k,r)*pet(k)**sigmaz(k) =e= gx(k,r)*xet(k)*pe(k,r)**sigmaz(k) ;
+****      $140                          $140
+ 504   
+ 505  xeeq2(k,r)$(sigmaz(k) eq inf and xe0(k,r) ne 0)..
+****      $140
+ 506     pe(k,r) =e= pet(k) ;
+ 507   
+ 508  xe.fx(k,r)$(xe0(k,r) eq 0) = 0 ;
+ 509   
+ 510  * ----- Equation (T-13)
+ 511   
+ 512  peteq1(k)$(sigmaz(k) ne inf and xet0(k) ne 0)..
+****       $140
+ 513     pet(k)**(1+sigmaz(k)) =e= sum(r,gx(k,r)*pe(k,r)**(1+sigmaz(k))) ;
+ 514   
+ 515  peteq2(k)$(sigmaz(k) eq inf and xet0(k) ne 0)..
+****       $140
+ 516     xet(k) =e= sum(r,xe(k,r)) ;
+ 517   
+ 518  pet.fx(k)$(xet0(k) eq 0) = 1 ;
+ 519   
+ 520  * ----- Export demand
+ 521   
+ 522  * ----- Equation (T-14)
+ 523   
+ 524  edeq1(k,r)$(etae(k,r) ne inf and ed0(k,r) ne 0)..
+****      $140       $140                $140
+ 525     ed(k,r)*wpe(k,r)**etae(k,r) =e= ae(k,r)*wpendx(k,r)**etae(k,r) ;
+****      $140                            $140        $140
+ 526   
+ 527  edeq2(k,r)$(etae(k,r) eq inf and ed0(k,r) ne 0)..
+****      $140
+ 528     wpe(k,r) =e= wpendx(k,r) ;
+ 529   
+ 530  ed.fx(k,r)$(ed0(k,r) eq 0) = 0 ;
+ 531   
+ 532  * ----- Domestic trade margins
+ 533   
+ 534  * ----- Equation (M-1)
+ 535   
+ 536  ytmgeq1(k)$(xtmg0(k,"d") ne 0)..
+****        $140      $140
+ 537     ytmg(k,"d") =e= tmg(k,"d")*pd(k)*xdd(k)  ;
+****        $140
+ 538   
+ 539  * ----- Equation (M-2)
+ 540   
+ 541  ytmgeq2(k)$(xtmg0(k,"m") ne 0)..
+****        $140
+ 542     ytmg(k,"m") =e= sum(r,tmg(k,"m")*pm(k,r)*xm(k,r)) ;
+ 543   
+ 544  * ----- Equation (M-3)
+ 545   
+ 546  ytmgeq3(k)$(xtmg0(k,"x") ne 0)..
+****        $140
+ 547     ytmg(k,"x") =e= sum(r,tmg(k,"x")*pe(k,r)*xe(k,r)) ;
+ 548   
+ 549  ytmg.fx(k,mg)$(xtmg0(k,mg) eq 0) = 0 ;
+ 550   
+ 551  * ----- Equation (M-4)
+ 552   
+ 553  xtmgeq(kk,mg)$(xtmg0(kk,mg) ne 0)..
+****       $140
+ 554     ptmg(kk,mg)*xtmg(kk,mg) =e= ytmg(kk,mg) ;
+****        $140        $140
+ 555  xtmg.fx(kk,mg)$(xtmg0(kk,mg) eq 0) = 0 ;
+ 556   
+ 557  * ----- Equation (M-5)
+ 558   
+ 559  xamgeq(k,kk,mg)$(amg(k,kk,mg) ne 0)..
+****       $140          $140
+ 560     xamg(k,kk,mg) =e= amg(k,kk,mg)*xtmg(kk,mg) ;
+ 561  xamg.fx(k,kk,mg)$(amg(k,kk,mg) eq 0) = 0 ;
+ 562   
+ 563  * ----- Equation (M-6)
+ 564   
+ 565  ptmgeq(kk,mg)$(xtmg0(kk,mg) ne 0)..
+****       $140
+ 566     ptmg(kk,mg) =e= sum(k,amg(k,kk,mg)*pa(k)) ;
+ 567  ptmg.fx(kk,mg)$(xtmg0(kk,mg) eq 0) = 1 ;
+ 568   
+ 569  * ----- Goods market equilibrium conditions
+ 570   
+ 571  * ----- Equation (E-1)
+ 572   
+ 573  pdeq(k)$(xdd0(k) ne 0)..
+****     $140
+ 574     xds(k) =e= xdd(k) ;
+ 575   
+ 576  pd.fx(k)$(xdd0(k) eq 0) = 1 ;
+ 577   
+ 578  * ----- Equation (E-2)
+ 579   
+ 580  wpeeq(k,r)$(ed0(k,r) ne 0)..
+****      $140
+ 581     ed(k,r) =e= xe(k,r) ;
+ 582   
+ 583  wpe.fx(k,r)$(ed0(k,r) eq 0) = 1 ;
+ 584   
+ 585  * ----- Macro closure
+ 586   
+ 587  * ----- Government accounts
+ 588   
+ 589  * ----- Equation (C-1)
+ 590   
+ 591  taryeq(g)..
+****       $140
+ 592     tary(g) =e= sum(k,sum(r,er(r)*tmadj(g)*tm(k,r,g)*wpm(k,r)*xm(k,r))) ;
+****        $140
+ 593   
+ 594  * ----- Equation (C-2)
+ 595   
+ 596  rtaryeq(g)..
+****        $140
+ 597     plev*rtary(g) =e= tary(g) ;
+****              $140
+ 598   
+ 599  * ----- Equation (C-3)
+ 600   
+ 601  gyeq(g)..
+****     $140
+ 602     gy(g) =e= sum(i,tp(i,g)*px(i)*xp(i))
+****      $140
+ 603         +  sum(k,pa(k)*(sum(j,tcp(k,j,g)*xap(k,j)) + sum(h,tcc(k,h,g)*xac(k
+      ,h)) + sum(f,tcf(k,f,g)*xaf(k,f))))
+ 604         +  tary(g) + sum(k,sum(r,te(k,r,g)*(1+tmg(k,"x"))*pe(k,r)*xe(k,r)))
+ 605         +  sum(lt,sum(i,tft(i,lt,g)*pt(i,lt)*td(i,lt)/(1+sum(gg,tft(i,lt,gg
+****                                                               $120,340
+      )))))
+ 606         +  sum(kt,sum(i,tfk(i,kt,g)*rent(i,kt)*kd(i,kt)/(1+sum(gg,tfk(i,kt,
+      gg)))))
+ 607         +  sum(l,sum(i,tfl(i,l,g)*wage(i,l)*ld(i,l)/(1+sum(gg,tfl(i,l,gg)))
+      ))
+ 608         +  rysh(g)*ry
+****               $140
+ 609                   + sum(gg,gtrg(g,gg))
+****                               $140
+ 610         + sum(i,tfr(i,g)*pr(i)*rd(i))
+****                   $140
+ 611         +  sum(e,kappac(e,g)*cy(e)) + taxadjh(g)*sum(h,kappah(h,g)*yh(h)) +
+       sum(r,er(r)*wtrg(r,g)) ;
+****                  $140
+ 612   
+ 613  * ----- Equation (C-4)
+ 614   
+ 615  gexpeq(g)..
+****       $140
+ 616     gexp(g) =e= yf(g)
+****        $140
+ 617                                  + sum(h,plev*gtrh(h,g))+plev*(sum(l,gtrl(l
+      ,g))+sum(kt,gtrk(kt,g)))+ sum(r,er(r)*gtrw(r,g)) + sum(gg,gtrg(gg,g))
+****                                           $140
+ 618                                  + rsc*ry ;
+ 619   
+ 620  * ----- Equation (C-5)
+ 621   
+ 622  savgeq(g)..
+****       $140
+ 623     savg(g) =e= gy(g) - gexp(g) ;
+****        $140
+ 624   
+ 625  * ----- Equation (C-6)
+ 626   
+ 627  rsgeq(g)..
+****      $140
+ 628     plev*rsg(g) =e= savg(g) ;
+****            $140
+ 629   
+ 630  * ----- Closure equations
+ 631   
+ 632  * ----- Equation (C-7)
+ 633   
+ 634  tieq..
+****     $140
+ 635     yf("capacct") =e= sum(e,savc(e)) + sum(h,savh(h)) + sum(g,savg(g)) + su
+      m(r,er(r)*savf(r)) ;
+****               $140
+ 636  *   yf("capacct") + yf("ginvs") =e= sum(e,savc(e)) + sum(h,savh(h)) + savg
+       + sum(rer(r)*savf(r)) ;
+ 637   
+ 638  * ----- Equation (C-8)
+ 639   
+ 640  xf.fx(g) = xf0(g) ;
+ 641   
+ 642  * ----- Equation (C-9)
+ 643   
+ 644  *xf.fx("ginvs") = xf0("ginvs") ;
+ 645   
+ 646  * ----- Equation (C-10)
+ 647   
+ 648  *xf.fx("trdmg") = xf0("trdmg") ;
+ 649   
+ 650  * ----- Equation (C-11)
+ 651   
+ 652  *xf.fx("inventory") = xf0("inventory") ;
+ 653   
+ 654  * ----- Equation (C-12)
+ 655   
+ 656  pleveq..
+****       $140
+ 657     plev*sum(k,pa0(k)*xa0(k)) =e= sum(k,pa(k)*xa0(k)) ;
+****                         $140
+ 658   
+ 659  * ----- Factor markets
+ 660   
+ 661  * ----- Integrated labor market
+ 662   
+ 663  * ----- Equations (F-1)-(F-3) are dropped in the case of segmented labor m
+      arkets
+ 664  *       and replaced with equations (L-1) through (L-7). The elasticity om
+      egam
+ 665  *       drives the choice of labor market specification.
+ 666   
+ 667  * ----- Equation (F-1)
+ 668   
+ 669  lseq1(l)$(omegal(l,"Tot") ne inf and ls0(l,"Tot") ne 0 and omegam(l) eq in
+****      $140       $140    $116            $140                     $140
+      f)..
+ 670     ls(l,"Tot")*plev**omegal(l,"Tot") =e=
+****      $140
+ 671           als(l,"Tot")*ewage(l,"Tot")**omegal(l,"Tot") ;
+****             $140           $140
+ 672   
+ 673  lseq2(l)$(omegal(l,"Tot") eq inf and ls0(l,"Tot") ne 0 and omegam(l) eq in
+****      $140
+      f)..
+ 674     ewage(l,"tot") =e= plev*ewage0(l,"tot") ;
+****                                  $140
+ 675   
+ 676  ls.fx(l,"Tot")$(ls0(l,"Tot") eq 0 and omegam(l) eq inf) = 0 ;
+ 677   
+ 678  * ----- Equation (F-2)
+ 679   
+ 680  ewageq(l)$(ls0(l,"Tot") ne 0 and omegam(l) eq inf)..
+****       $140
+ 681     ls(l,"Tot") =e= sum(i,ld(i,l)) ;
+ 682   
+ 683  ewage.fx(l,"Tot")$(ls0(l,"Tot") eq 0 and omegam(l) eq inf) = 1 ;
+ 684   
+ 685  * ----- Equation (F-3)
+ 686   
+ 687  wageq(i,l)$(ld0(i,l) ne 0 and omegam(l) eq inf)..
+****      $140      $140
+ 688     wage(i,l) =e= phil(i,l)*ewage(l,"Tot") ;
+****                      $140
+ 689   
+ 690  wage.fx(i,l)$(ld0(i,l) eq 0) = 0 ;
+ 691   
+ 692  * ----- Segmented labor market
+ 693   
+ 694  * ----- Equation (L-1)
+ 695   
+ 696  migreq(l)$(omegam(l) ne inf)..
+****       $140
+ 697     migr(l)*awage(l,"rur")**omegam(l)
+****        $140     $140
+ 698        =e= chim(l)*awage(l,"urb")**omegam(l) ;
+****               $140
+ 699   
+ 700  * ----- Equation (L-2)
+ 701   
+ 702  awageq(l,gz2)$(omegam(l) ne inf and ls0(l,gz2) ne 0)..
+****       $140  $120,340
+ 703     awage(l,gz2)*sum(i$(mapg(i,gz2)),ld(i,l))
+****                            $140
+ 704        =e= sum(i$(mapg(i,gz2)),wage(i,l)*ld(i,l)/(1+sum(g,tfl(i,l,g)))) ;
+ 705   
+ 706  awage.fx(l,gz2)$(ls0(l,gz2) eq 0) = 1 ;
+ 707   
+ 708  * ----- Equation (L-3)
+ 709   
+ 710  ewageq2(l,gz2)$(ls0(l,gz2) ne 0 and omegam(l) ne inf)..
+****        $140
+ 711     ls(l,gz2) =e= sum(i$(mapg(i,gz2)),ld(i,l)) ;
+ 712   
+ 713  ewage.fx(l,gz2)$(ls0(l,gz2) eq 0 and omegam(l) ne inf) = 1 ;
+ 714   
+ 715  * ----- Equation (L-4)
+ 716   
+ 717  wageq2(i,l,gz2)$(mapg(i,gz2) and ld0(i,l) ne 0 and omegam(l) ne inf)..
+****       $140
+ 718     wage(i,l) =e= phil(i,l)*ewage(l,gz2) ;
+ 719   
+ 720  wage.fx(i,l)$(ld0(i,l) eq 0 and omegam(l) ne inf) = 1 ;
+ 721   
+ 722  * ----- Equation (L-5)
+ 723   
+ 724  rlseq(l)$(omegam(l) ne inf)..
+****      $140
+ 725     ls(l,"rur") =e= lslag(l,"rur")*(1+glab(l,"rur")) - migr(l) ;
+****                         $140             $140
+ 726   
+ 727  * ----- Equation (L-6)
+ 728   
+ 729  ulseq(l)$(omegam(l) ne inf)..
+****      $140
+ 730     ls(l,"urb") =e= lslag(l,"urb")*(1+glab(l,"urb")) + migr(l) ;
+ 731   
+ 732  * ----- Equation (L-7)
+ 733   
+ 734  tlseq(l)$(omegam(l) ne inf)..
+****      $140
+ 735     ls(l,"tot") =e= sum(gz2,ls(l,gz2)) ;
+ 736   
+ 737  * ----- Capital markets
+ 738   
+ 739  * ----- Equation (F-4)
+ 740   
+ 741  tkseq1(kt)$(omegakt ne inf and tks0(kt) ne 0)..
+****       $140         $140            $140
+ 742     tks(kt)*pk**omegakt =e= akst(kt)*ksup*ptks(kt)**omegakt  ;
+****       $140   $140              $140     $140 $140
+ 743   
+ 744  tkseq2(kt)$(omegakt eq inf and tks0(kt) ne 0)..
+****       $140
+ 745     ptks(kt) =e= pk ;
+ 746   
+ 747  tks.fx(kt)$(tks0(kt) eq 0) = 0 ;
+ 748   
+ 749  * ----- Equation (F-5)
+ 750   
+ 751  pkeq1$(omegakt ne inf)..
+****      $140
+ 752     pk**(1+omegakt) =e= sum(kt,akst(kt)*ptks(kt)**(1+omegakt)) ;
+ 753   
+ 754  pkeq2$(omegakt eq inf)..
+****      $140
+ 755     ksup =e= sum(kt,tks(kt)) ;
+ 756   
+ 757  * ----- Equation (F-6)
+ 758   
+ 759  kseq1(i,kt)$(omegak(kt) ne inf and ks0(i,kt) ne 0)..
+****      $140          $140               $140
+ 760     ks(i,kt)*((1+sum(g,tfk(i,kt,g)))*ptks(kt))**omegak(kt) =e= aks(i,kt)*tk
+****      $140                                                        $140
+      s(kt)*rent(i,kt)**omegak(kt) ;
+ 761   
+ 762  kseq2(i,kt)$(omegak(kt) eq inf and ks0(i,kt) ne 0)..
+****      $140
+ 763     rent(i,kt) =e= ptks(kt) ;
+ 764   
+ 765  ks.fx(i,kt)$(ks0(i,kt) eq 0) = 0 ;
+ 766   
+ 767  * ----- Equation (F-7)
+ 768   
+ 769  ptkseq1(kt)$(omegak(kt) ne inf and tks0(kt) ne 0)..
+****        $140
+ 770     ptks(kt)**(1+omegak(kt)) =e= sum(i,aks(i,kt)*(rent(i,kt)/(1+sum(g,tfk(i
+      ,kt,g))))**(1+omegak(kt))) ;
+ 771   
+ 772  ptkseq2(kt)$(omegak(kt) eq inf and tks0(kt) ne 0)..
+****        $140
+ 773     tks(kt) =e= sum(i,ks(i,kt)) ;
+ 774   
+ 775  ptks.fx(kt)$(tks0(kt) eq 0) = 1 ;
+ 776   
+ 777  * ----- Equation (F-8)
+ 778   
+ 779  renteq(i,kt)..
+****       $140
+ 780     ks(i,kt) =e= kd(i,kt) ;
+ 781   
+ 782  * ----- Land markets
+ 783   
+ 784  * ---- Top level CET
+ 785   
+ 786  * ----- Equation (F-9)
+ 787   
+ 788  ttseq1(lt)$(tts0(lt) ne 0 and omegatl ne inf)..
+****       $140      $140                 $140
+ 789     tts(lt)*pland**omegatl =e= atts(lt)*land*ptts(lt)**omegatl ;
+****       $140      $140              $140     $140 $140
+ 790   
+ 791  ttseq2(lt)$(tts0(lt) ne 0 and omegatl eq inf)..
+****       $140
+ 792     ptts(lt) =e= pland ;
+ 793   
+ 794  tts.fx(lt)$(tts0(lt) eq 0) = 0 ;
+ 795   
+ 796  * ----- Equation (F-10)
+ 797   
+ 798  plandeq1$(land0 ne 0 and omegatl ne inf)..
+****         $140   $140
+ 799     pland**(1+omegatl) =e= sum(lt,atts(lt)*ptts(lt)**(1+omegatl)) ;
+ 800   
+ 801  plandeq2$(land0 ne 0 and omegatl eq inf)..
+****         $140
+ 802     land =e= sum(lt,tts(lt)) ;
+ 803   
+ 804  pland.fx$(land0 eq 0) = pland0 ;
+****                               $140
+ 805   
+ 806  * ---- Second level CET
+ 807   
+ 808  * ----- Equation (F-11)
+ 809   
+ 810  tseq1(i,lt)$(ts0(i,lt) ne 0 and omegat(lt) ne inf)..
+****      $140       $140                  $140
+ 811     ts(i,lt)*((1+sum(g,tft(i,lt,g)))*ptts(lt))**omegat(lt) =e= ats(i,lt)*tt
+****      $140                                                        $140
+      s(lt)*pt(i,lt)**omegat(lt) ;
+ 812   
+ 813  tseq2(i,lt)$(ts0(i,lt) ne 0 and omegat(lt) eq inf)..
+****      $140
+ 814     pt(i,lt) =e= ptts(lt) ;
+ 815   
+ 816  ts.fx(i,lt)$(ts0(i,lt) eq 0) = 0 ;
+ 817   
+ 818  * ----- Equation (F-12)
+ 819   
+ 820  pttseq1(lt)$(tts0(lt) ne 0 and omegat(lt) ne inf)..
+****        $140
+ 821     ptts(lt)**(1+omegat(lt)) =e= sum(i,ats(i,lt)*(pt(i,lt)/(1+sum(g,tft(i,l
+      t,g))))**(1+omegat(lt))) ;
+ 822   
+ 823  pttseq2(lt)$(tts0(lt) ne 0 and omegat(lt) eq inf)..
+****        $140
+ 824     tts(lt) =e= sum(i,ts(i,lt)) ;
+ 825   
+ 826  ptts.fx(lt)$(tts0(lt) eq 0) = ptts0(lt) ;
+****                                    $140
+ 827   
+ 828  * ----- Equation (F-13)
+ 829   
+ 830  pteq(i,lt)$(ts0(i,lt) ne 0)..
+****     $140
+ 831     ts(i,lt) =e= td(i,lt) ;
+ 832   
+ 833  pt.fx(i,lt)$(ts0(i,lt) eq 0) = 1 ;
+ 834   
+ 835  * ----- Sector specific factor market
+ 836   
+ 837  * ----- Equation (F-14)
+ 838   
+ 839  rseq1(i)$(rs0(i) ne 0 and omegar(i) ne inf)..
+****      $140    $140               $140
+ 840  *    rs(i)*((1+tfr(i)-sfr(i))*plev)**omegar(i) =e= ars(i)*pr(i)**omegar(i)
+       ;
+ 841       rs(i)*plev**omegar(i) =e= ars(i)*pr(i)**omegar(i) ;
+****        $140
+ 842   
+ 843  rseq2(ncap)$(rs0(ncap) ne 0 and omegar(ncap) eq inf)..
+****      $140 $120,340
+ 844     pr(ncap) =e= plev*pr0(ncap) ;
+****                         $140
+ 845  *  pr(ncap) =e= (1+tfr(ncap)-sfr(ncap))*plev*pr0(ncap) ;
+ 846   
+ 847  rs.fx(i)$(rs0(i) eq 0) = 0 ;
+ 848   
+ 849  * ----- Equation (F-15)
+ 850   
+ 851  preq(ncap)$(rs0(ncap) ne 0)..
+****     $140
+ 852     rd(ncap) =e= rs(ncap) ;
+ 853  *  rd(i) =e= rs(i)*(1+tfr(i)) ;
+ 854   
+ 855  pr.fx(i)$(rs0(i) eq 0) = pr0(i) ;
+ 856   
+ 857  * ----- Macro identities
+ 858   
+ 859  * ----- Equation (I-1)
+ 860   
+ 861  gdpmpeq..
+****        $140
+ 862     gdpmp =e= sum(k,sum(h,(1+sum(g,tcc(k,h,g)))*pa(k)*xac(k,h)))
+****         $140
+ 863                            + sum(k,sum(f,(1+sum(g,tcf(k,f,g)))*pa(k)*xaf(k,
+      f)))
+ 864             + sum(k,sum(r, er(r)*wpe(k,r)*xe(k,r)))
+ 865             - sum(k,sum(r, er(r)*wpm(k,r)*xm(k,r))) ;
+ 866   
+ 867  * ----- Equation (I-2)
+ 868   
+ 869  rgdpmpeq..
+****         $140
+ 870     rgdpmp =e= sum(k,sum(h,(1+sum(g,tcc0(k,h,g)))*pa0(k)*xac(k,h)))
+****          $140
+ 871                                  + sum(k,sum(f,(1+sum(g,tcf0(k,f,g)))*pa0(k
+****                                                            $140
+      )*xaf(k,f)))
+ 872             +  sum(k,sum(r,er0(r)*wpe0(k,r)*xe(k,r)))
+****                              $140    $140
+ 873             -  sum(k,sum(r,er0(r)*wpm0(k,r)*xm(k,r))) ;
+****                                      $140
+ 874   
+ 875  * ----- Equation (I-3)
+ 876   
+ 877  pgdpmpeq..
+****         $140
+ 878     pgdpmp*rgdpmp =e= gdpmp ;
+****          $140
+ 879   
+ 880  * ----- Equation (I-4)
+ 881   
+ 882  gdpfceq..
+****        $140
+ 883     gdpfc =e= sum(i,sum(l,wage(i,l)*ld(i,l)))
+****         $140
+ 884            +  sum(kt,sum(i,rent(i,kt)*kd(i,kt)))
+ 885            +  sum(i,pr(i)*rd(i))
+ 886            +  sum(lt,sum(i,pt(i,lt)*td(i,lt))) ;
+ 887   
+ 888  * ----- Equation (I-5)
+ 889   
+ 890  rgdpfceq..
+****         $140
+ 891     rgdpfc =e= sum(i,sum(l,wage0(i,l)*lambdal(i,l)*ld(i,l)))
+****          $140                  $140
+ 892             +  sum(kt,sum(i,rent0(i,kt)*lambdak(i,kt)*kd(i,kt)))
+****                                 $140
+ 893             +  sum(i,pr0(i)*lambdar(i)*rd(i))
+ 894             +  sum(lt,sum(i,pt0(i,lt)*lambdat(i,lt)*td(i,lt))) ;
+****                               $140
+ 895   
+ 896  * ----- Equation (I-6)
+ 897   
+ 898  pgdpfceq..
+****         $140
+ 899     pgdpfc*rgdpfc =e= gdpfc ;
+****          $140
+ 900   
+ 901  * ----- Growth equations
+ 902   
+ 903  * ----- Equation (G-1)
+ 904   
+ 905  ggdpeq..
+****       $140
+ 906     rgdpfc =e= ggdp*rgdpfcLag ;
+****                   $140      $140
+ 907  *   rgdpmp =e= ggdp*rgdpmpLag ;
+ 908   
+ 909  * ----- Equation (G-2)
+ 910   
+ 911  lambdaleq(ip,l)..
+****          $140,120,340
+ 912     lambdal(ip,l)  =e= (1+gl+chil(ip,l))*lambdalLag(ip,l) ;
+****                            $140 $140              $140
+ 913   
+ 914  lambdakeq(ip,kt)..
+****          $140
+ 915     lambdak(ip,kt) =e= (1+gl+chil(ip,kt))*lambdakLag(ip,kt);
+****                                                    $140
+ 916   
+ 917  lambdateq(ip,lt)..
+****          $140
+ 918     lambdat(ip,lt) =e= (1+gl+chil(ip,lt))*lambdatLag(ip,lt) ;
+****                                                    $140
+ 919   
+ 920  * ----- Equation (G-3)
+ 921   
+ 922  gegeq(k,j)$xap0(k,j)..
+****      $140
+ 923     xap(k,j) =e= geg(k,j)*xaplag(k,j) ;
+****                    $140        $140
+ 924   
+ 925  * ----- Equation (G-4)
+ 926   
+ 927  gceeq(k,h)..
+****      $140
+ 928     xac(k,h) =e= gce(k,h)*xaclag(k,h) ;
+****                    $140        $140
+ 929   
+ 930  * ----- emission functions
+ 931   
+ 932     efieq(ef,i)$efi0(ef,i).. efi(ef,i) =e= xp(i)*emit(i,ef) ;
+****         $140,120,340,140       $140                 $140
+ 933  *   efieq(ef,i)$efi0(ef,i).. efi(ef,i) =e= mue(ef)*(rd(i)-offset(i)) ;
+ 934   
+ 935          efi.fx(ef,i)$(efi0(ef,i) eq 0) = 0 ;
+ 936   
+ 937   
+ 938     efheq(ef,h)$efh0(ef,h).. efh(ef,h) =e= sum(k,sum(i$mapik(i,k),xac(k,h)*
+****         $140       $140        $140
+      emit(i,ef))) ;
+ 939  *   efheq(ef,h)$efh0(ef,h).. efh(ef,h) =e= sum(k,sum(i$mapik(i,k),xac(k,h)
+      *EF_GHG(i,"GHG_Total"))) ;
+ 940  *   efheq(ef,h)$efh0(ef,h).. efh(ef,h) =e= mue(ef)*sum(k,lambdac(ef,k,h)*x
+      ac(k,h)) ;
+ 941   
+ 942          efh.fx(ef,h)$(efh0(ef,h) eq 0) = 0 ;
+ 943   
+ 944     efteq(ef)$eft0(ef)..   eft(ef) =e= sum(i,efi(ef,i)) + sum(h,efh(ef,h)) 
+****         $140     $140        $140
+      ;
+ 945   
+ 946          eft.fx(ef)$(eft0(ef) eq 0) = 0 ;
+ 947   
+ 948     efcapeq(ef)$ifcap(ef)..   efcap(ef) =e= eft(ef) ;
+****           $140      $140          $140
+ 949  *   efcapeq(ef)$ifcap(ef)..   efcap(ef) =e= eft(ef) - sum(i,offset(i));
+ 950  *   efcapeq(ef)$ifcap(ef)..   efcap(ef) =e= sum(icap,efi(ef,icap)-offset(i
+      cap)) + sum(hcap,efh(ef,hcap));
+ 951   
+ 952     efcieq("co2",icap)$ifcap("co2").. utef("co2") =e= pr(icap) ;
+****          $140       $120,340             $140
+ 953   
+ 954     efckeq("co2",k)$ifcap("co2").. utef("co2") =e= the(k,"govt") ;
+****          $140                                        $140
+ 955   
+ 956     sfreq(icap,g)$ifrr.. sfr(icap,g) =e= rac("co2",icap)*sum(j,pr(j)*rd(j)/
+****         $140         $140  $140            $140
+      (1+sum(gg,tfr(j,gg))))/xp(icap);
+ 957   
+ 958  *   pefxeq(ef,i).. pefx(ef,i) =e= mue(ef)*lambdae(ef,i)*pef(ef,i) ;
+ 959   
+ 960  *   cefxeq(ef,i).. cefx(ef,i) =e= mue(ef)*lambdae(ef,i)*cef(ef,i) ;
+ 961   
+ 962          bop..
+****            $140
+ 963                  sum(r,savf(r)) =e= sum(r,savf0(r)) ;
+****                                               $140
+ 964   
+ 965          era..
+****            $140
+ 966                          er("row") =e= 1 ;
+ 967   
+ 968  model PANDA /
+ 969     ewageq, wageq, lseq2, preq, rseq2,
+ 970     puskeq, pskleq, pktdeq, pttdeq, pkskeq, pkleq, pvaeq, pndeq, pxeq, ppeq
+      ,
+ 971     peq1, xpeq2, pmeq, pmteq, paeq, peeq, peteq1, xeq1, xdseq2, xeteq2, xee
+      q2,
+ 972     cpieq, fpieq, epieq, eexpeq,
+ 973          ndeq, vaeq, xapeq, ttdeq, tdeq, kleq, rdeq, uskeq, kskeq, skleq, k
+      tdeq, kdeq, ldeq1, ldeq2,
+ 974     lyeq, ryeq, kyeq, ktreeq, ktrheq, ktrweq, cyeq, savceq, ctrheq, ctrweq,
+       tyeq,
+ 975     yheq, ydeq, htreq, htrheq, htrweq, xaceq, savheq,
+ 976     xafeq, pfeq, yfeq,
+ 977     xaeq, xddeq, xmteq, xmeq,
+ 978     peteq2, xpeq1, peq2, xeq2, xdseq1, xeteq1, xeeq1, edeq1, edeq2,
+ 979     xtmgeq, ytmgeq1, ytmgeq2, ytmgeq3, ptmgeq, xamgeq,
+ 980     taryeq, rtaryeq, gyeq, gexpeq, savgeq, rsgeq, tieq, pleveq,
+ 981     pdeq, wpeeq,
+ 982     lseq1, awageq, ewageq2, wageq2, migreq,
+ 983     rlseq, ulseq, tlseq,
+ 984     kseq1, kseq2, ptkseq1, ptkseq2, renteq,
+ 985     pkeq1, pkeq2, tkseq1, tkseq2,
+ 986     plandeq1, plandeq2, ttseq1, ttseq2, pttseq1, pttseq2,
+ 987     tseq1, tseq2, pteq, rseq1,
+ 988     gdpmpeq, rgdpmpeq, pgdpmpeq, gdpfceq, rgdpfceq, pgdpfceq,
+ 989     ggdpeq, lambdaleq,lambdakeq,lambdateq
+ 990          , gegeq, gceeq
+ 991   
+ 992     , efieq, efheq, efteq, efcapeq, efcieq, sfreq
+ 993  *   pefxeq, cefxeq
+ 994     , tpeq
+ 995  *       , bop
+ 996  *, era
+ 997     / ;
+ 998   
+ 999  PANDA.holdfixed = 1 ;
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 02/09/17 18:42:20 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+116  Label is unknown
+120  Unknown identifier entered as set
+140  Unknown symbol
+340  A label/element with the same name exist. You may have forgotten
+        to quote a label/element reference. For example,
+        set i / a,b,c /; parameter x(i); x('a') = 10;
+
+**** 462 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        2.125 SECONDS      3 MB  24.4.6 r52609 WEX-WEI
+
+
+USER: Yaqian Mu                                      G150107:0436AO-WIN
+      Tsinghua University, Res. Centre for International EnvironmDC6727
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\hero\Desktop\Github\Panda\Code/pandamodel.gms
+Output     C:\Users\hero\Desktop\Github\Panda\Code/pandamodel.lst
+
+**** USER ERROR(S) ENCOUNTERED
